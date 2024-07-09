@@ -343,7 +343,7 @@ display: inline-block;
         <a href="#funcao3" onclick="mostrarFuncao('funcao3')"> Bloco de Notas </a>
         <a href="#funcao4" onclick="mostrarFuncao('funcao4')"> Filas Previdência </a>
         <a href="#funcao5" onclick="mostrarFuncao('funcao5')"> Filas Terefas </a>
-        <a href="#funcao6" onclick="mostrarFuncao('funcao6')"> Validação Data de Assinatura </a>
+        <a href="#funcao6" onclick="mostrarFuncao('funcao6')"> Lembretes </a>
         <a href="#funcao7" onclick="mostrarFuncao('funcao7')"> Calculadora </a>
     </div>
     <div class="tab-content">
@@ -3516,100 +3516,161 @@ Equipe Previdência.`;
 <!-- IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIFINAL FUNÇÃO FILA TAREFASIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII -->
         </div>
         <div id="funcao6" class="tab-pane" style="display: none;">	
-<!-- IIIIIIIIIIIIIIIIIIIIIIIIIIIIIINICIO FUNÇÃO VALIDAÇÃO DATA DE ASSINATURAIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII -->
+<!-- IIIIIIIIIIIIIIIIIIIIIIIIIIIIIINICIO FUNÇÃO AGENDAIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII -->
 </head>
-<body>
-<div class="containerdevolução">
-        <h1 class="texto";>Validação Data de Assinatura</h1>
     <style>
-        #resultado2.dentro-prazo {
-            color: blue;
-            background-color: white;
-            border: 2px solid black;
-            padding: 20px;
-            box-sizing: border-box;
-            display: inline-block;
-            background-color: lightblue;
-            padding: 10px; /* Adicione algum espaço interno se necessário */
+
+        .containeragenda {
+            width: 80%;
+            margin: 0 auto;
         }
 
-        #resultado2.fora-prazo {
-            color: red;
-            background-color: white;
-            border: 2px solid black;
-            padding: 20px;
-            box-sizing: border-box;
-            display: inline-block;
-            background-color: lightblue;
-            padding: 10px; /* Adicione algum espaço interno se necessário */
+        .input-label2 {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+            color: #4d4d4d;
+        }
+
+       textarea {
+            display: block;
+            width: 100%;
+            margin-top: 5px;
+        }
+
+        #compromissos div {
+            border: 1px solid #ccc;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f9f9f9;
         }
     </style>
-        <label for="data-inicial">Data da Assinatura:</label>
-        <input type="date" id="data-inicial">
-         <label for="data-final">Data de Abertura da Solicitação:</label>
-        <input type="date" id="data-final">
+<body>
+    <div class="containerblocodenotas">
+        <h1 class="texto">Agenda</h1>
+        <form id="agendaForm">
+            <label class="input-label2">Titulo:</label>
+            <input type="text" id="title" name="title" required>
+            
+            <label class="input-label2">Descrição:</label>
+            <textarea id="description" name="description" required></textarea>
+            
+            <label class="input-label2">Data e Hora:</label>
+            <input type="datetime-local" id="datetime" name="datetime" required><br><br>
+            
+            <button type="submit" class="button">Salvar</button>
+        </form>
+        
+        <h1 class="texto">Lista de Lembretes</h1>
+        <div id="compromissos">
+            <!-- Aqui serão exibidos os compromissos salvos -->
+        </div>
+    </div>
 
-        <button type="button" class="button" onclick="validarPrazo()">Validar Prazo</button>
-          
-         <div id="resultado2"></div>
-         </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const agendaForm = document.getElementById('agendaForm');
+        const compromissosContainer = document.getElementById('compromissos');
 
+        // Carregar compromissos salvos ao carregar a página
+        carregarCompromissos();
 
-    <script>
-        function eFeriado(data) {
-            const feriadosFixos = [
-                { mes: 0, dia: 1 },   // 1º de Janeiro
-                { mes: 3, dia: 21 },  // 21 de Abril
-                { mes: 4, dia: 1 },   // 1º de Maio
-                { mes: 8, dia: 7 },   // 7 de Setembro
-                { mes: 9, dia: 12 },  // 12 de Outubro
-                { mes: 10, dia: 2 },  // 2 de Novembro
-                { mes: 10, dia: 15 }, // 15 de Novembro
-                { mes: 11, dia: 25 }  // 25 de Dezembro
-            ];
+        // Adicionar evento de submit para salvar compromisso
+        agendaForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const titleInput = document.getElementById('title');
+            const descriptionInput = document.getElementById('description');
+            const datetimeInput = document.getElementById('datetime');
 
-            return feriadosFixos.some(feriado => 
-                feriado.mes === data.getMonth() && feriado.dia === data.getDate());
-        }
+            const title = titleInput.value.trim();
+            const description = descriptionInput.value.trim();
+            const datetime = new Date(datetimeInput.value);
 
-        function contarDiasUteis(dataInicial, dataFinal) {
-            let count = 0;
-            while (dataInicial <= dataFinal) {
-                if (dataInicial.getUTCDay() !== 0 && 
-                    dataInicial.getUTCDay() !== 6 && 
-                    !eFeriado(dataInicial)) {
-                    count++;
-                }
-                dataInicial.setDate(dataInicial.getDate() + 1);
-            }
-            return count;
-        }
-
-        function validarPrazo() {
-            const resultado = document.getElementById("resultado");
-            const dataInicial = new Date(document.getElementById("data-inicial").value);
-            const dataFinal = new Date(document.getElementById("data-final").value);
-
-            if(isNaN(dataInicial.getTime()) || isNaN(dataFinal.getTime()) || dataFinal < dataInicial){
-                resultado2.innerText = "Datas inválidas!";
-                resultado2.className = "fora-prazo";
+            if (!title || !description || isNaN(datetime.getTime())) {
+                alert('Preencha todos os campos corretamente.');
                 return;
             }
 
-            const diasUteis = contarDiasUteis(new Date(dataInicial), dataFinal);
+            const compromisso = {
+                title,
+                description,
+                datetime: datetime.toISOString() // Armazenar data como string ISO
+            };
 
-            if (diasUteis <= 3) {
-                resultado2.innerText = "Assinatura está dentro do prazo!";
-                resultado2.className = "dentro-prazo";
-            } else {
-                resultado2.innerText = "Assinatura está fora do prazo!";
-                resultado2.className = "fora-prazo";
-            }
+            salvarCompromisso(compromisso);
+            agendaForm.reset();
+        });
+
+        // Função para salvar compromisso no localStorage
+        function salvarCompromisso(compromisso) {
+            let compromissos = JSON.parse(localStorage.getItem('compromissos')) || [];
+            compromissos.push(compromisso);
+            localStorage.setItem('compromissos', JSON.stringify(compromissos));
+            exibirCompromissosOrdenados(); // Exibe os compromissos na ordem correta
         }
-    </script>
+
+        // Função para carregar compromissos do localStorage e exibir na página
+        function carregarCompromissos() {
+            exibirCompromissosOrdenados();
+            verificarLembretes(); // Verifica se há lembretes ao carregar a página
+        }
+
+        // Função para exibir compromissos na ordem por data
+        function exibirCompromissosOrdenados() {
+            let compromissos = JSON.parse(localStorage.getItem('compromissos')) || [];
+            compromissos.sort((a, b) => new Date(a.datetime) - new Date(b.datetime));
+            
+            compromissosContainer.innerHTML = ''; // Limpa a lista antes de exibir os compromissos
+
+            compromissos.forEach(function(compromisso) {
+                exibirCompromisso(compromisso);
+            });
+        }
+
+        // Função para exibir um compromisso na lista
+        function exibirCompromisso(compromisso) {
+            const item = document.createElement('div');
+            item.innerHTML = `
+                <strong>${compromisso.title}</strong> (${new Date(compromisso.datetime).toLocaleString()})
+                <p>${compromisso.description}</p>
+                <button type="button" class="button" onclick="excluirCompromisso('${compromisso.datetime}')">Excluir</button>
+            `;
+            compromissosContainer.appendChild(item);
+        }
+
+        // Função para verificar lembretes a cada tempo estipulado
+        function verificarLembretes() {
+            setInterval(function() {
+                let compromissos = JSON.parse(localStorage.getItem('compromissos')) || [];
+                compromissos.forEach(function(compromisso) {
+                    const now = new Date();
+                    const savedDatetime = new Date(compromisso.datetime);
+
+                    if (now >= savedDatetime) {
+                        alert(`Lembrete para: ${savedDatetime.toLocaleString()}\n${compromisso.description}`);
+                    }
+                });
+            }, 1800000); // Verifica a cada uma hora (3600000 milissegundos)
+        }
+
+        // Função para excluir compromisso do localStorage e da lista
+        window.excluirCompromisso = function(datetime) {
+            if (confirm('Tem certeza que deseja excluir este compromisso?')) {
+                let compromissos = JSON.parse(localStorage.getItem('compromissos')) || [];
+                compromissos = compromissos.filter(function(compromisso) {
+                    return compromisso.datetime !== datetime;
+                });
+                localStorage.setItem('compromissos', JSON.stringify(compromissos));
+                exibirCompromissosOrdenados(); // Recarrega os compromissos na ordem correta após excluir
+            }
+        };
+    });
+</script>
+
+
 </body>
 </html>
-<!-- IIIIIIIIIIIIIIIIIIIIIIIIIIIIIFINAL FUNÇÃO VALIDAÇÃO DATA DE ASSINATURAIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII -->
+<!-- IIIIIIIIIIIIIIIIIIIIIIIIIIIIIFINAL FUNÇÃO AGENDAIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII -->
         </div>
         <div id="funcao7" class="tab-pane" style="display: none;">	
 <!-- IIIIIIIIIIIIIIIIIIIIIIIIIIIIIINICIO FUNÇÃO  CACULADORA PREVIDENCIAIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII -->			
