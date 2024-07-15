@@ -1840,6 +1840,7 @@ transferTypeField.addEventListener('change', function() {
             ],
             "Transferência do Benefício de proteção": [
 "Pecúlio - Sem indicação",
+"Pecúlio - Sem indicação - FOP 473",
 "Pecúlio - 02 opções indicadas",
 "Pecúlio indicado - Menor de 16 anos",
 "Pecúlio indicado - Prev Crescer Menor de 16 anos",
@@ -2040,6 +2041,7 @@ transferTypeField.addEventListener('change', function() {
 "Unificação – Beneficiários diferentes",
 "Unificação – Pecúlio diferentes",
 "Pecúlio - Sem indicação",
+"Pecúlio - Sem indicação - FOP 473",
 "Pecúlio - 02 opções indicadas",
 "Pecúlio indicado - Menor de 16 anos",
 "Pecúlio indicado - Prev Crescer Menor de 16 anos",
@@ -2488,6 +2490,9 @@ case "Unificação – Pecúlio diferentes":
                         break;
 case "Pecúlio - Sem indicação":
                         resultText += `➢ O(a) participante possui pecúlio ativo no certificado de origem, caso queira continuar com o benefício de proteção deverá preencher o campo "Transferência do Benefício de proteção” indicando SOMENTE uma das duas opções "Valor de Contribuição” ou "Valor da Importância Segurada”. Caso não seja indicado nenhuma das opções, precisamos que haja a confirmação através de uma nova solicitação, informando que o(a) participante não deseja manter o benefício.\n\n`;
+                        break;
+case "Pecúlio - Sem indicação - FOP 473":
+                        resultText += `➢ Verificamos que o certificado de origem XXXXXXXX possui um pecúlio ativo. Se o(a) participante deseja realizar a migração desse benefício, recomendamos que indique uma das duas opções de transferência, "Valor de Contribuição" ou "Valor da Importância Segurada", no campo "Informações Complementares". No entanto, devido à ausência de um campo designado para esse propósito no formulário de solicitação "FOP 473”, é crucial que a descrição do tipo de transferência, "Valor de Contribuição" ou "Valor da Importância Segurada", seja feita de maneira clara e compreensível. Para evitar mal-entendidos, solicitamos que você faça uma nova solicitação para confirmar se o cliente deseja manter ou não o benefício. Se o(a) participante optar por não mantê-lo, solicitamos que essa decisão seja claramente indicada na nova solicitação.\n\n`;
                         break;
 case "Pecúlio - 02 opções indicadas":
                         resultText += `➢ No formulário, no campo ‘Transferência dos benefícios de proteção’, foram indicadas as duas opções "Valor de Contribuição” ou "Valor da Importância Segurada”. Para que possamos prosseguir com sua solicitação, solicitamos que você marque apenas uma opção de proteção. Isso nos ajudará a processar corretamente sua solicitação.\n\n`;
