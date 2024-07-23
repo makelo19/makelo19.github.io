@@ -1808,6 +1808,7 @@ transferTypeField.addEventListener('change', function() {
 "Campos disponíveis",
 "Sugestão de fundo mais atrativo",
 "Sem recursos para o fundo desejado",
+"Sem recursos para o fundo desejado - Orientação Tabela Plano Conjugado",
             ],
             "Dados da Transferência - Valor a ser transferido": [
 "Valor indicado na opção Total",
@@ -2028,6 +2029,7 @@ transferTypeField.addEventListener('change', function() {
 "Campos disponíveis",
 "Sugestão de fundo mais atrativo",
 "Sem recursos para o fundo desejado",
+"Sem recursos para o fundo desejado - Orientação Tabela Plano Conjugado",
 "Sem anexo E-mail de retenção",
 "Sem anexo tela FX",
 "Anexo da tela incompleto",
@@ -2420,6 +2422,9 @@ case "Sugestão de fundo mais atrativo":
                         break;
 case "Sem recursos para o fundo desejado":
                         resultText += `➢ De acordo com a nossa tabela atual de fundos disponível em (http://caixaseguros.extranet.caixa/redecaixa/indicadores_prev/fundos_invest_prev/index.html), o(a) participante não possui recursos suficientes em previdência para acessar o fundo de investimento desejado. O valor estipulado para acesso ao fundo CAIXA FIC PREV XXXXX é de R$ 00.001,00 a R$ 00.000,00. Atualmente, o fundo disponível para o recurso é o CAIXA FIC PREV XXXXX. Caso o(a) cliente faça parte do Segmento Exclusivo, solicitamos que encaminhe juntamente a proposta a tela do painel FX (sistema da CAIXA que mostra o nome, CPF do cliente e volume de negócios na CAIXA). No caso de Grupo Familiar, é necessário informar os dados do grupo (Nome, CPF e grau de parentesco) no item "Informação Complementar".\n\n`;
+                        break;
+case "Sem recursos para o fundo desejado - Orientação Tabela Plano Conjugado":
+                        resultText += `➢ De acordo com a nossa tabela atual de fundos, disponível em ( http://caixaseguros.extranet.caixa/redecaixa/indicadores_prev/fundos_invest_prev/index.html ), o(a) participante não possui recursos suficientes em previdência para acessar o fundo de investimento desejado. O valor estipulado para acesso ao fundo CAIXA FIC PREV XXXXX pelo FOP 223 é de R$ 00.001,00 a R$ 00.000,00. Atualmente, o fundo disponível para o recurso é o CAIXA FIC PREV XXXXX. A tabela observada é referente aos planos conjugados. No entanto, para que o(a) cliente possa ter acesso aos benefícios desses planos, é necessário atender a alguns critérios específicos. Existe um valor mínimo de contratação de contribuição de renda no montante de R$ 20,00, bem como um valor mínimo de risco (pecúlio) de R$ XX,00 para a faixa do fundo desejado. Além disso, a contratação do pecúlio requer que o(a) cliente tenha uma idade mínima de 16 anos e máxima de 65 anos. A alteração para esse tipo de plano é feita mediante o envio do FOP 021, disponibilizado em ( https://portaleconomiario.caixavidaeprevidencia.com.br/extranet/fop-previdencia ).\n\n`;
                         break;
 case "Valor indicado na opção Total":
                         resultText += `➢ No formulário, ao optar pela transferência TOTAL, não é necessário indicar valores específicos, pois o saldo do certificado está sujeito a alterações devido à rentabilidade. Solicitamos que revise o formulário e remova quaisquer valores indicados na opção de transferência total. Caso deseja transferir parcialmente o valor, marque a opção PARCIAL e especifique a porcentagem desejada.\n\n`;
