@@ -3199,7 +3199,7 @@ Espero que essas informações sejam úteis. Se tiver mais alguma dúvida, sinta
 "Tarefa: Remoção da carência do pecúlio",
 "Tarefa: Bloqueio por inconsistência nas bases de saldo",
 "Tarefa: Sobre realocação de saldo",
-"Tarefa: Estorno ou problema na cobrança",
+"Tarefa: Estorno de Transferência",
             ],
             "PREV - Consultoria - Central": [
 "Tarefa: Ajuste do script",
@@ -3221,7 +3221,7 @@ Espero que essas informações sejam úteis. Se tiver mais alguma dúvida, sinta
 "Tarefa: Remoção da carência do pecúlio",
 "Tarefa: Bloqueio por inconsistência nas bases de saldo",
 "Tarefa: Sobre realocação de saldo",
-"Tarefa: Estorno ou problema na cobrança",
+"Tarefa: Estorno de Transferência",
 "Tarefa: Ajuste do script",
 "Tarefa: Ajuste do script 2",
 "Tarefa: Pedido de validação de procuração",
@@ -3396,12 +3396,12 @@ Gentileza verificar a possibilidade de realocação do aporte efetuado no valor 
 
 Observação: comprovante do aporte está anexo a solicitação.\n\n`;
                         break;
-case "Tarefa: Estorno ou problema na cobrança":
+case "Tarefa: Estorno de Transferência":
                         resultTexttarefa += `Data do Incidente: XX/XX/XXXX
 
 Descrição do Problema: 
 
-O(a) cliente XXXXXXXX, solicitou a transferência (TOTAL ou PARCIAL) via FOP do certificado XXXXXX para o certificado XXXXXXX. No entanto, o analista operacional realizou incorretamente a transferência (TOTAL ou PARCIAL) dos valores para o fundo CAIXA FIC XXXXXXXXXXXX, contrariando a solicitação da cliente.
+O(a) cliente XXXXXXXX, solicitou a transferência (TOTAL ou PARCIAL) via FOP do certificado XXXXXX para o certificado XXXXXXX. No entanto, o analista operacional realizou incorretamente a transferência (TOTAL ou PARCIAL) dos valores para o fundo CAIXA FIC XXXXXXXXXXXX, contrariando a solicitação do(a) cliente.
 
 Qual o fundo incorreto? CAIXA FIC XXXXXXXXXXXX
 
@@ -3412,6 +3412,16 @@ Qual o fundo correto? CAIXA FIC XXXXXXXXXXXXX
 Área Impactada pelo Incidente: GEMCO - Gerência de Manutenção e Recebimento
 
 Causa Raiz do Incidente: Houve uma falha operacional durante o cadastro do pedido de transferência. O analista responsável selecionou erroneamente a opção de transferência (TOTAL ou PARCIAL) para o fundo  CAIXA FICXXXXXXXXXXXXX em vez da transferência (TOTAL ou PARCIAL) para o fundo  CAIXA FIC XXXXXXXXXXXXX solicitada pelo(a) cliente.
+
+Descrição do pedido de estorno:
+
+Nome:  XXXXXXXXXXX
+CPF: XXXXXXXXX
+Certificado de origem: XXXXXX
+Certificado de destino: XXXXX
+Data da transferência: XXXXX
+Solicitação (Que consta no KIRPEV): XXXXXX
+Valor a ser estornado: XXXXXXXX
 
 Contingência Adotada (Ação Corretiva): Assim que o erro operacional foi identificado, foi solicitado o estorno da transferência para novo processamento e cálculo de rentabilidade, corrigindo o certificado do(a) cliente.
 
