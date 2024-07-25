@@ -3388,17 +3388,7 @@ case "Tarefa: Bloqueio por inconsistência nas bases de saldo":
 Observação: O certificado não possui resgate em andamento.\n\n`;
                         break;
 case "Tarefa: Sobre realocação de saldo":
-                        resultTexttarefa += `Recebemos a solicitação XXXXXXX  para verificar realocação de aporte: 
-
-Conforme  tela anexa, o aporte ficou com o status inconsistente no certificado --- devido encerramento por transferência na data da baixa do aporte (00/00/0000).
-
-TELA
-
-A baixa do valor do aporte inconsistente foi efetuada no certificado XXXXXX que tem o fundo CAIXA FIC PREV XXXX, a baixa deveria ter sido efetuada no certificado de destino da transferência XXXXX com o fundo CAIXA FIC PREV XXXXXX. 
-
-Gentileza verificar a possibilidade de realocação do aporte efetuado no valor de R$ XXXXXX. 
-
-Observação: comprovante do aporte está anexo a solicitação.\n\n`;
+                        resultTexttarefa += `Direcionar solicitação para a fila PREV - Cobrança - Backoffice.\n\n`;
                         break;
 case "Tarefa: Estorno de Transferência":
                         resultTexttarefa += `Data do Incidente: XX/XX/XXXX
