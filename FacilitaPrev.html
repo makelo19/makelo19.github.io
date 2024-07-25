@@ -1743,6 +1743,7 @@ transferTypeField.addEventListener('change', function() {
 "Modalidade não Indicada",
 "Modalidade Incorreta",
 "Dados cadastrais atualizado não indicado",
+"Orientação Transferência de Titularidade",
             ],
             "Conjugado": [
 "Conjugado – Orientações Sobre o plano",
@@ -1962,6 +1963,7 @@ transferTypeField.addEventListener('change', function() {
 "Modalidade não Indicada",
 "Modalidade Incorreta",
 "Dados cadastrais atualizado não indicado",
+"Orientação Transferência de Titularidade",
 "Conjugado – Orientações Sobre o plano",
 "Conjugado – Preencheu campo 2.2 – Nova emissão",
 "Conjugado – Regras",
@@ -2231,6 +2233,9 @@ case "Modalidade Incorreta":
                         break;
 case "Dados cadastrais atualizado não indicado":
                         resultText += `➢ Na página 1, campo 1, deve ser marcada o item sobre a ciência do participante da obrigatoriedade em manter seus dados cadastrais atualizados e em concordância com os critérios de boa-fé e veracidade nas declarações e circunstâncias atreladas à contratação do seguro conforme o art. 765 da lei 10.406/2022 do Código Civil.\n\n`;
+                        break;
+case "Orientação Transferência de Titularidade":
+                        resultText += `➢ Informamos que a alteração de CPF não é permitida, pois afeta diretamente no benefício fiscal. Desta forma, visando solucionar essa solicitação, o (a) cliente pode solicitar o resgate total do plano e efetuar uma nova contratação com os dados corretos.\n\n`;
                         break;
 case "Conjugado – Orientações Sobre o plano":
                         resultText += `Verificamos que você encaminhou o formulário 021-05 (VGBL), referente aos planos conjugados. No entanto, para que o cliente possa ter acesso aos benefícios desses planos, é necessário atender a alguns critérios específicos.\n\n`;
