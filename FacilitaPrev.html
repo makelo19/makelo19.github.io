@@ -1735,6 +1735,7 @@ transferTypeField.addEventListener('change', function() {
         const fopFields = {
 "Introdução": [
 "Devolução",
+"Pedido de desculpa",
 "Questionamento",
             ],
             "Dados do cliente": [
@@ -1948,7 +1949,6 @@ transferTypeField.addEventListener('change', function() {
 "Orientação – Site dos Fop's atualizados",
 "Orientação – Preenchimento fop",
 "Orientação – Novas condições",
-"Pedido de desculpa",
 "Orientação – Novos FOPs",
             ],
             "Novo assunto": [
@@ -1958,6 +1958,9 @@ transferTypeField.addEventListener('change', function() {
 <!-- novos titulos -->
             ],
             "TODOS1": [
+"Devolução",
+"Pedido de desculpa",
+"Questionamento",
 "Nome incorreto",
 "CPF incorreto",
 "Modalidade não Indicada",
@@ -2135,7 +2138,6 @@ transferTypeField.addEventListener('change', function() {
 "Orientação – Site dos Fop's atualizados",
 "Orientação – Preenchimento fop",
 "Orientação – Novas condições",
-"Pedido de desculpa",
 "Orientação – Novos FOPs",
             ],
             "Novo assunto": [
@@ -2215,6 +2217,9 @@ transferTypeField.addEventListener('change', function() {
                 switch (field) {
 case "Devolução":
                         resultText += `Lamentamos informar que não será possível atender ao seu pedido, pois identificamos que:\n\n`;
+                        break;
+case "Pedido de desculpa":
+                        resultText += `Pedimos desculpas pelos transtornos causados, pois nosso compromisso é atender com qualidade às necessidades e expectativas de nossos clientes.\n\n`;
                         break;
 case "Questionamento":
                         resultText += `Em resposta ao seu questionamento:\n\n`;
@@ -2630,7 +2635,7 @@ case "Assinatura do responsável direto menor de 16 anos":
                         resultText += `➢ Para os participantes menores de 16 anos, a solicitação deve ser registrada pelo responsável legal direto em nome do menor. Nesse caso, é necessário encaminhar os documentos dos pais, do menor e do responsável financeiro. Observação: No caso, o pai ou a mãe deve assinar o FOP.\n\n`;
                         break;
 case "Assinatura Menor Emancipado 16-18 anos":
-                        resultText += `➢ No caso de menores entre 16 e 18 anos, não emancipados, a solicitação deve ser registrada pelo segurado/participante e pelo seu responsável legal (pais, tutores ou curadores).  No caso de menor emancipado, a solicitação pode ser registrada por ele mesmo, bastando o envio do documento de identificação em conjunto com o documento de emancipação autenticado em cartório.\n\n`;
+                        resultText += `➢ No caso de menores entre 16 e 18 anos, não emancipados, a solicitação deve ser registrada pelo responsável legal (pais, tutores ou curadores). No caso de menor emancipado, a solicitação pode ser registrada por ele mesmo, bastando o envio do documento de identificação em conjunto com o documento de emancipação autenticado em cartório. Caso a solicitação seja assinada pelo responsável, é necessário encaminhar os documentos que comprovem a condição de responsável legal, tanto do menor quanto do responsável. Por favor, verifique esses documentos e envie-os por meio de uma nova ocorrência juntamente com o formulário (FOP).\n\n`;
                         break;
 case "Assinatura por procuração":
                         resultText += `➢ No caso de documentos assinados por procuração, é importante que a procuração seja específica para procedimentos operacionais no plano de previdência da CAIXA VIDA & PREVIDENCIA. É relevante lembrar que a CAIXA VIDA & PREVIDENCIA é uma pessoa jurídica distinta da CAIXA ECONOMICA FEDERAL. Portanto, solicitamos que verifiquem e enviem uma nova procuração junto com os documentos dos envolvidos (cliente e procurador).\n\n`;
@@ -2732,7 +2737,7 @@ Orientamos que proceda com a alteração de fundos dentro da mesma faixa, atrav�
                         break;
 
 case "Preencheu o fop 224-04 - Alteração Nova faixa":
-                        resultText += `➢ O FOP 224-04 (Solicitação de Diversificação entre Fundos de Investimento) é exclusivo para a alteração ou diversificação de fundos dentro do mesmo certificado e faixa de investimento, sem emissão de novos certificados. Caso o(a) cliente deseja realizar uma transferência com a emissão de um novo certificado, em uma nova faixa de investimento, com novas condições, carência e vigência, pedimos gentilmente que envie o FOP 223-05 (Solicitação de Transferência com Alteração de Taxa).\n\n`;
+                        resultText += `➢ O FOP 224-04 (Solicitação de Diversificação entre Fundos de Investimento) é exclusivo para a alteração ou diversificação de fundos dentro do mesmo certificado e faixa de investimento, sem emissão de novos certificados. Caso o(a) cliente deseja realizar uma transferência com a emissão de um novo certificado, em uma nova faixa de investimento, com novas condições, carência e vigência, pedimos gentilmente que envie o FOP 223-05 (Solicitação de Transferência com Alteração de Taxa). O formulário pode ser encontrado através do link: ( https://portaleconomiario.caixavidaeprevidencia.com.br/extranet/fop-previdencia ).\n\n`;
                         break;
 case "Preencheu o fop 224-04 - Faixa antiga indisponivel":
                         resultText += `➢ O certificado de número XXXXXXX é um plano antigo e não possui a opção de mudança para a mesma faixa do fundo chamado XXXXXXXXXXXXXX. Nesse caso, será necessário realizar a abertura de um novo certificado. Caso esteja de acordo e queira a transferência com a emissão de um novo certificado para o fundo CAIXA FIC PREV XXXXXXXXX, pedimos gentilmente que envie o FOP 223-05 (Solicitação de Transferência com Alteração de Taxa). O formulário pode ser encontrado através do link: ( https://portaleconomiario.caixavidaeprevidencia.com.br/extranet/fop-previdencia ).\n\n`;
@@ -2904,9 +2909,6 @@ case "Orientação – Preenchimento fop":
                         break;
 case "Orientação – Novas condições":
                         resultText += `Lembramos que, ao realizar a transferência de fundos com nova emissão, serão aplicadas novas condições, carências e vigência ao novo certificado. É importante que o(a) participante esteja ciente dessas alterações e as compreenda antes de prosseguir com a solicitação.\n\n`;
-                        break;
-case "Pedido de desculpa":
-                        resultText += `Pedimos desculpas pelos transtornos causados, pois nosso compromisso é atender com qualidade às necessidades e expectativas de nossos clientes.\n\n`;
                         break;
 case "Orientação – Novos FOPs":
                         resultText += `Para fins de conformidade do processo, legislação e melhor atendimento, foram elaborados novos formulários para emissão/transferência de Planos de Previdência: 
