@@ -6,43 +6,48 @@
     <title>Atalhos Fila de Transferência PF</title>
 <style>
     body {
-        font-family: Arial, sans-serif;
+        font-family: 'Roboto', sans-serif;
         display: flex;
         justify-content: center;
         align-items: center;
         height: 100vh;
         margin: 0;
-        background-color: #f4f4f4;
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        color: #ffffff;
     }
     .container {
         text-align: center;
+        backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.1);
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     }
-        .textotitulos {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 50px;
-    font-weight: bold;
-    text-align: center;
-    color: #000000;
+    .textotitulos {
+        font-size: 3em;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #ffffff;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     }
     .button {
-    background-color: #96705b;
-    color: white;
-    border: 1px solid #6d4a41;
-    padding: 2px 5px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
-    transition: background-color 0.3s;
-    text-decoration: none;
-    display: inline-block; /* Adicione esta linha */
-    margin: 5px; /* Adicione esta linha para espaço entre botões */
+        background: #0099ff;
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        border-radius: 30px;
+        cursor: pointer;
+        font-size: 1em;
+        box-shadow: 0 5px 15px rgba(0, 153, 255, 0.4);
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+        margin: 10px 0;
     }
     .button:hover {
-        background-color: #0056b3;
+        background: #0056b3;
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 86, 179, 0.4);
     }
 </style>
 </head>
@@ -60,13 +65,13 @@
         <a href="https://validar.iti.gov.br/" class="button" target="_blank">Validação de assinaturas eletrônicas</a>
         <a href="https://cvp.beedoo.io/login" class="button" target="_blank">Beedoo</a>
 
-    <div class="container">
+
         <h2>Planilhas</h2>
         <a href="https://wizco3-my.sharepoint.com/:x:/g/personal/keniareis_wiz_co/Ecqa5aouUctEkfOlbGwZqWAB0o2tpYWqZIzXB9Sw2MepIg?wdOrigin=TEAMS-MAGLEV.p2p_ns.rwc&wdExp=TEAMS-TREATMENT&wdhostclicktime=1720700741663&web=1" class="button" target="_blank">Planilha Alteração Mesma Faixa</a>
         <a href="https://wizco3-my.sharepoint.com/:x:/g/personal/layssantos_wiz_co/Ee4cKoZwyyNOmzIEB2T90MMBfSwR63nXkiKU3dzh-Dcmzw?wdOrigin=TEAMS-MAGLEV.p2p_ns.rwc&wdExp=TEAMS-TREATMENT&wdhostclicktime=1720701413156&web=1" class="button" target="_blank">Planilha Controle de Transferência</a>
         <a href="https://wizco3-my.sharepoint.com/:x:/g/personal/layssantos_wiz_co/EShL8xQ-VQZHqorARYWvALsBYgUUEji1UWbPUinQXFktjw?wdOrigin=TEAMS-MAGLEV.undefined_ns.rwc&wdExp=TEAMS-TREATMENT&wdhostclicktime=1722030291436&web=1" class="button" target="_blank">Planilha de Férias</a>       
 
-        <div class="container">
+
         <h2> Ferramentas Wiz Co</h2>
         <a href="https://wizbpo.qualida.de/Login?ReturnUrl=%2fQUALIDADE%2fprincipal.aspx" class="button" target="_blank">Portal da Qualidade</a>
         <a href="https://app.qulture.rocks/users/sign_in" class="button" target="_blank">Qulture Rocks</a>
