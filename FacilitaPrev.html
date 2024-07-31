@@ -12,6 +12,7 @@
         color: #333;
     }
 
+      /* TEXTOS TITULOS SECUNDARIOS */
     .texto {
         font-size: 30px;
         font-weight: bold;
@@ -21,15 +22,16 @@
         text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     }
 
+      /* TEXTOS TITULOS DO FORMULARIO */
     .texto2 {
-        font-size: 30px;
+        font-size: 15px;
         font-weight: bold;
         text-align: center;
         margin-bottom: 20px;
         color: #000000;
-        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     }
 
+      /* TEXTO NOME DA FERRAMENTA */
     .textotitulos {
         font-size: 50px;
         font-weight: bold;
@@ -54,7 +56,7 @@
         margin-left: 20px;
         margin-top: 40px;
         margin-bottom: 20px;
-        padding: 20px;
+        padding: 50px;
         border: 1px solid #3498db; /* Azul claro */
         border-radius: 10px;
         box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
@@ -82,6 +84,7 @@
     }
 
       /* BOTÕES SECUNDARIOS NORMAIS */
+
     .button {
         background-color: #0070D2; /* Azul salesforce */
         color: white;
@@ -97,6 +100,7 @@
     }
 
       /* Animação ao passar o mouse */
+
       button:hover {
       background-color: #0000CD; /* Azul escuro para o efeito de destaque */
       box-shadow: 0 8px 20px rgba(52, 152, 219, 0.6); /* Sombra mais forte ao passar o mouse */
@@ -113,6 +117,7 @@
     }
 
       /* BOTÕES PRICIPAIS DA PAGINA INICIAL */
+
     .botao-container2 a {
     background: #FF4500;
     color: white;
@@ -150,22 +155,17 @@
     color: #000000; /* Cor preta */
     }
 
-    .input-field {
+      /* Tamanho quadrado dos formularios e as letras do formularios */
+
+    .input-field, .output {
         width: 100%;
         padding: 8px;
-        margin-bottom: 10px;
+        margin-bottom: 8px;
+        margin-top: 10px; /* Adiciona espaço acima */
         border: 1px solid #3498db; /* Azul claro */
         border-radius: 5px;
         font-size: 14px;
         color: #333;
-    }
-
-    .output {
-        border: 1px solid #3498db; /* Azul claro */
-        padding: 10px;
-        margin-top: 20px;
-        border-radius: 5px;
-        background-color: #ffffff; /* Fundo branco */
     }
 
     .history-title {
@@ -180,6 +180,8 @@
         border-collapse: collapse;
         margin-top: 10px;
     }
+
+      /* Tamanho da fonte texto terciarios */
 
     th, td {
         border: 1px solid #3498db; /* Azul claro */
@@ -337,8 +339,8 @@
 <!—IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIINÍCIO TABELA DE FUNDOSIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII -->
         <div id="funcao1" class="tab-pane" style="display: none;">
   <div class="conteinertabela">
-  <h1 class="texto2";>Tabela de Fundos</h1>
-  <label for="faixaValores">Selecione uma faixa de valores:</label>
+  <h1 class="texto";>Tabela de Fundos</h1>
+ <label for="faixaValores" class="texto2">Selecione uma faixa de valores:</label>
   <select id="faixaValores">
     <option value="00-00000">Selecionar</option>
     <option value="35-10000">de R$35,00 a R$10.000,00</option>
@@ -828,38 +830,37 @@ function copiarCodigo(elementId) {
 </script>
 <!—IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIFINAL BLOCO DE NOTASIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII -->
 <div class="container">
-            <h1 class="texto";>Fila de Transferência</h1>
-<p>Dados da Transferência:</p>
-        <form id="textGenerator">
-            <label class="input-label">Data:</label>
+            <h1 class="texto">Dados da Transferência</h1>
+            <form id="textGenerator">
+            <label class="texto2">Data:</label>
             <input type="text" id="currentDate" class="input-field" disabled>
             <br>
-            <label class="input-label">Número da Ocorrência:</label>
+            <label class="texto2">Número da Ocorrência:</label>
             <input type="text" id="numeroocorrencia" class="input-field" maxlength="100" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
             <br>
-            <label class="input-label">Nome do Cliente:</label>
+            <label class="texto2">Nome do Cliente:</label>
             <input type="text" id="clientName" class="input-field" maxlength="100" oninput="let trimmedValue = this.value.trimStart(); this.value = trimmedValue.replace(/[^a-zA-Z ]+/g, '').toUpperCase();">
             <br>
-            <label class="input-label">Certificado de origem:</label>
+            <label class="texto2">Certificado de origem:</label>
             <input type="text" id="originCertificate" class="input-field" maxlength="100" oninput="this.value = this.value.replace(/^\s+/,'');">
             <br>
-            <label class="input-label">Certificado de destino ou Nº da proposta:</label>
+            <label class="texto2">Certificado de destino ou Nº da proposta:</label>
             <input type="text" id="destCertificate" class="input-field" maxlength="100" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
             <br>
-            <label class="input-label">Tipo de Retirada:</label>
+            <label class="texto2">Tipo de Retirada:</label>
             <select id="transferType" class="input-field">
                 <option value="Selecionar">Selecionar</option>                
                 <option value="TOTAL">TOTAL</option>
                 <option value="PARCIAL">PARCIAL</option>
             </select>
             <br>
-            <label class="input-label">Insira o Valor:</label>
+            <label class="texto2">Insira o Valor:</label>
             <input type="text" id="transferValue" class="input-field" enabled>
             <br>
-            <label class="input-label">Fundo de Destino:</label>
+            <label class="texto2">Fundo de Destino:</label>
             <input type="text" id="destFund" class="input-field" maxlength="600">
             <br>
-            <label class="input-label">Tipo de Migração:</label>
+            <label class="texto2">Tipo de Migração:</label>
             <select id="fopSelect" class="input-field">
                 <option value="EMISSÃO">EMISSÃO</option>
                 <option value="DIVERSIFICAÇÃO">DIVERSIFICAÇÃO</option>
@@ -879,7 +880,7 @@ function copiarCodigo(elementId) {
             </form>
 
         <div class="output">
-            <strong>Texto Gerado:</strong>
+            <span class="texto2">Texto Gerado:</span>
             <p id="generatedText"></p>
         </div>
     </div>
@@ -1668,7 +1669,7 @@ transferTypeField.addEventListener('change', function() {
 <body>
     <div class="containerdevolução">
       <h1 class="texto";>Textos Para Devoluções</h1>
-        <label class="input-label">Campos do FOP:</label>
+        <label class="texto2">Campos do FOP:</label>
         <ul class="option-list" id="fop-list">
             <li><input type="checkbox" name="fop" id="Introdução" value="Introdução">Introdução</li>
             <li><input type="checkbox" name="fop" id="Conjugado" value="Conjugado"> Conjugado Fop 021-05</li>
@@ -1702,7 +1703,7 @@ transferTypeField.addEventListener('change', function() {
         </div>
 
         <div id="selected-titles">
-           <label class="input-label">Motivo da improcedência:</label>
+           <label class="texto2">Motivo da improcedência:</label>
             <div class="title-box">
                 <ul id="selected-titles-list"></ul>
             </div>
@@ -3145,7 +3146,7 @@ Espero que essas informações sejam úteis. Se tiver mais alguma dúvida, sinta
 <body>
     <div class="containertarefa">
       <h1 class="texto";>Textos para Tarefas</h1>
-        <label class="input-label">Escolha a Fila:</label>
+        <label class="texto2">Escolha a Fila:</label>
         <ul class="option-listtarefa" id="filatarefas-list">
             <li><input type="checkbox" name="filatarefas" id="Justificativa fora do prazo" value="Justificativa fora do prazo">Justificativa fora do prazo</li>
             <li><input type="checkbox" name="filatarefas" id="Fila de Tarefa PPV - Emissão - Apoio" value="Fila de Tarefa PPV - Emissão - Apoio">Fila de Tarefa PPV - Emissão - Apoio</li>
@@ -3163,7 +3164,7 @@ Espero que essas informações sejam úteis. Se tiver mais alguma dúvida, sinta
         </div>
 
         <div id="selected-titles">
-           <label class="input-label">Motivo da tarefa:</label>
+           <label class="texto2">Motivo da tarefa:</label>
             <div class="title-box">
                 <ul id="selected-titles-listtarefa"></ul>
             </div>
