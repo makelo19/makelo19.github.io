@@ -3,70 +3,71 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
+<style>
+    body {
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 20px;
-        background-color: #f3e9d2;
+        background-color: #f0f4f8; /* Cor de fundo mais clara e moderna */
         color: #333;
     }
 
-        .texto {
+    .texto {
         font-size: 30px;
         font-weight: bold;
         text-align: center;
-        color: #4d4d4d;
+        color: #2c3e50; /* Cor de texto mais escura e moderna */
     }
 
-       .texto2 {
+    .texto2 {
         font-size: 30px;
         font-weight: bold;
         text-align: left;
-        color: #4d4d4d;
+        color: #2c3e50; /* Cor de texto mais escura e moderna */
     }
 
-        .textotitulos {
+    .textotitulos {
         font-size: 50px;
         font-weight: bold;
         text-align: center;
-        color: #4d4d4d;
+        color: #2c3e50; /* Cor de texto mais escura e moderna */
     }
 
-        .notes {
+    .notes {
         float: right;
         width: 700px;
-        border: 1px solid #96705b;
+        border: 1px solid #3498db; /* Azul claro */
         border-radius: 10px;
         padding: 20px;
         margin: 20px;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        background-color: #fffaf0;
+        background-color: #ffffff; /* Fundo branco */
     }
 
-        .container {
+    .container {
         width: 400px;
         margin-left: 20px;
         margin-top: 20px;
         margin-bottom: 20px;
         padding: 20px;
-        border: 1px solid #96705b;
+        border: 1px solid #3498db; /* Azul claro */
         border-radius: 10px;
         box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
-        background-color: #fffaf0;
+        background-color: #ffffff; /* Fundo branco */
     }
 
-        .history {
+    .history {
         margin-top: 20px;
-        border-top: 1px solid #96705b;
+        border-top: 1px solid #3498db; /* Azul claro */
         padding-top: 10px;
-        background-color: #fffaf0;
+        background-color: #ffffff; /* Fundo branco */
     }
 
-        .button {
-        background-color: #96705b;
+      /* BOTÕES SECUNDARIOS NORMAIS */
+    .button {
+        background-color: #0070D2; /* Azul salesforce */
         color: white;
-        border: 1px solid #6d4a41;
+        border: 1px solid #0000CD; /* Azul escuro borda */
         padding: 2px 5px;
         border-radius: 5px;
         cursor: pointer;
@@ -76,262 +77,226 @@
         height: auto;
         line-height: normal;
     }
-.button:active {
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
-  transform: translate(2px, 2px);
-    }
-<!—IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIINICIO ESTILO PAGINA BOTOES INICIALlIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII -->
-.botao-container2 {
-  margin-bottom: 10px;
-  text-align: center; /* Centraliza os botões */
-}
 
-.botao-container2 a {
-display: inline-block;
-  text-decoration: none;
-  background-color: #808080; /* Cinza médio */
-  color: white;
-  border: 1px solid #6d4a41;
-  padding: 5px 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 14px;
-  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
-  transition: all 0.1s;
-  height: auto;
-  line-height: normal;
-  margin-bottom: 10px;
-  white-space: nowrap;
- filter: grayscale(100%);
- margin-right: 10px; /* espaço entre os botoes */
+      /* Animação ao passar o mouse */
+      button:hover {
+      background-color: #0000CD; /* Azul escuro para o efeito de destaque */
+      box-shadow: 0 8px 20px rgba(52, 152, 219, 0.6); /* Sombra mais forte ao passar o mouse */
+      transform: scale(1.05); /* Leve aumento de escala para destacar o botão */
 }
-.botao-container2 a:active {
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
-  transform: translate(2px, 2px);
-}
-.botao-container2 {
-  display: flex;
-  justify-content: center;
-        }
-<!— IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIFINAL ESTILO PAGINA BOTOES INICIALlIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII -->
-        .button:active {
+    .button:active {
         box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
         transform: translate(2px, 2px);
     }
 
-         .input-label {
-        font-weight: bold;
-        color: #4d4d4d;
+    .botao-container2 {
+        margin-bottom: 10px;
+        text-align: center;
     }
 
-        .input-field {
+      /* BOTÕES PRICIPAIS DA PAGINA INICIAL */
+    .botao-container2 a {
+    background: #003366;
+    color: white;
+    border: none;
+    padding: 10px 20px; /* Ajustado para um tamanho ideal */
+    border-radius: 20px; /* Arredondamento mais sutil */
+    cursor: pointer;
+    font-size: 0.9em; /* Tamanho de fonte menor */
+    box-shadow: 0 4px 12px rgba(0, 153, 255, 0.4); /* Efeito de sombra mais leve */
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    margin: 10px 5px; /* Ajustado para melhorar o espaçamento entre os botões */
+    }
+
+   .botao-container2 a:hover {
+    transform: scale(1.1); /* Aumenta o tamanho do botão ao passar o mouse */
+    box-shadow: 0 6px 18px rgba(0, 153, 255, 0.6); /* Aumenta o efeito de sombra ao passar o mouse */
+    }
+
+   .botao-container2 a:active {
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+    transform: translate(2px, 2px);
+    }
+
+    .botao-container2 {
+    display: flex;
+    justify-content: center;
+    }
+
+    }
+
+    .input-label {
+        font-weight: bold;
+        color: #2c3e50; /* Cor de texto mais escura e moderna */
+    }
+
+    .input-field {
         width: 100%;
         padding: 8px;
         margin-bottom: 10px;
-        border: 1px solid #96705b;
+        border: 1px solid #3498db; /* Azul claro */
         border-radius: 5px;
         font-size: 14px;
         color: #333;
     }
 
-        .output {
-        border: 1px solid #96705b;
+    .output {
+        border: 1px solid #3498db; /* Azul claro */
         padding: 10px;
         margin-top: 20px;
         border-radius: 5px;
-        background-color: #fffaf0;
+        background-color: #ffffff; /* Fundo branco */
     }
 
-        .history-title {
+    .history-title {
         font-weight: bold;
-        color: #4d4d4d;
+        color: #2c3e50; /* Cor de texto mais escura e moderna */
         margin-bottom: 10px;
         font-size: 16px;
     }
 
-        table {
+    table {
         width: 100%;
         border-collapse: collapse;
         margin-top: 10px;
     }
 
-        th, td {
-        border: 1px solid #96705b;
+    th, td {
+        border: 1px solid #3498db; /* Azul claro */
         padding: 8px;
         text-align: left;
         font-size: 14px;
         color: #333;
     }
 
-        th {
-        background-color: #f3e9d2;
+    th {
+        background-color: #ecf0f1; /* Cinza muito claro */
     }
 
-<!-- IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIINICIO PÁGINA ESTILO DAS DEVOLUÇÕESIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII -->
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-        }
-        
-.containerdevolução {
-            flex: 1; /* Adicionado para ocupar o espaço disponível */
-            border: 1px solid #96705b;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            background-color: #fffaf0;
-            padding: 20px;
-            margin: 20px 0;
-}
+    .containerdevolução {
+        flex: 1;
+        border: 1px solid #3498db; /* Azul claro */
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        background-color: #ffffff; /* Fundo branco */
+        padding: 20px;
+        margin: 20px 0;
+    }
 
-.result-box {
-            border: 2px solid #333;
-            padding: 10px;
-            margin: 20px 0;
-            white-space: pre-wrap;
-            display: block;
-            line-height: 1.2;
-}
-        
-        h1 {
-            font-weight: normal;
-        }
-        
-        label {
-            font-weight: normal;
-        }
-        
-.option-list {
-    list-style: none;
-    padding: 0;
-    display: flex; /* Exibir as opções lado a lado */
-    flex-wrap: wrap; /* Quebrar em linhas conforme necessário */
-    justify-content: space-between; /* ou outra opção de alinhamento */
-    margin-right: 20px; /* Espaçamento entre as opções */
-    border: 1px solid #8B4513; /* Adiciona borda a cada item */
-}
+    .result-box {
+        border: 2px solid #333;
+        padding: 10px;
+        margin: 20px 0;
+        white-space: pre-wrap;
+        display: block;
+        line-height: 1.2;
+    }
 
-.option-list2 {
-    list-style: none;
-    padding: 0;
-    flex-wrap: wrap; /* Quebrar em linhas conforme necessário */
-}
+    h1 {
+        font-weight: normal;
+    }
 
-/* Adiciona bordas individuais aos itens de ambas as listas */
-.option-list li {
-    padding: 10px; /* Adiciona espaçamento interno a cada item */
-    margin: 5px; /* Adiciona espaçamento entre os itens */
-    width: calc(33.33% - 10px); /* Define a largura para criar três colunas com espaçamento entre elas */
-    box-sizing: border-box; /* Garante que a largura inclui a borda e o padding */
-}
+    label {
+        font-weight: normal;
+    }
 
-<!-- IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIFINAL PÁGINA ESTILO DAS DEVOLUÇÕESIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII -->
-<!-- IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIINICIO PÁGINA ESTILO FILA TAREFAIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII -->
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-        }
-        
-.containertarefa {
-  max-width: 600px;
-  margin: 0 auto; /* Centraliza o container na página */
-  border: 1px solid #96705b;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  background-color: #fffaf0;
-}
+    .option-list {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-right: 20px;
+        border: 1px solid #7f8c8d; /* Cinza escuro */
+    }
 
-.result-boxtarefa {
-  border: 2px solid #333; /* Alterei a cor da borda para escuro */
-  padding: 10px;
-  margin: 20px 0; /* Adicionei um espaçamento na parte superior e inferior */
-  white-space: pre-wrap;
-  display: block;
-  line-height: 1.2;
-}
-        
-        h1 {
-            font-weight: normal;
-        }
-        
-        label {
-            font-weight: normal;
-        }
-        
-.option-listtarefa {
-    list-style: none;
-    padding: 0;
-    display: flex; /* Exibir as opções lado a lado */
-    flex-wrap: wrap; /* Quebrar em linhas conforme necessário */
-    justify-content: space-between; /* ou outra opção de alinhamento */
-    margin-right: 20px; /* Espaçamento entre as opções */
-}
+    .option-list2 {
+        list-style: none;
+        padding: 0;
+        flex-wrap: wrap;
+    }
 
-.option-listtarefa2 {
-    list-style: none;
-    padding: 0;
-    display: flex; /* Exibir as opções lado a lado */
-    flex-wrap: wrap; /* Quebrar em linhas conforme necessário */
-}
+    .option-list li {
+        padding: 10px;
+        margin: 5px;
+        width: calc(33.33% - 10px);
+        box-sizing: border-box;
+    }
 
-/* Adiciona bordas individuais aos itens de ambas as listas */
-.option-listtarefa li,
-.option-listtarefa2 li {
-    border: 1px solid #8B4513; /* Adiciona borda a cada item */
-    padding: 10px; /* Adiciona espaçamento interno a cada item */
-    margin: 5px; /* Adiciona espaçamento entre os itens */
-    width: calc(33.33% - 10px); /* Define a largura para criar três colunas com espaçamento entre elas */
-    box-sizing: border-box; /* Garante que a largura inclui a borda e o padding */
+    .containertarefa {
+        max-width: 600px;
+        margin: 0 auto;
+        border: 1px solid #3498db; /* Azul claro */
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        background-color: #ffffff; /* Fundo branco */
+    }
 
+    .result-boxtarefa {
+        border: 2px solid #333;
+        padding: 10px;
+        margin: 20px 0;
+        white-space: pre-wrap;
+        display: block;
+        line-height: 1.2;
+    }
 
-        }
+    .option-listtarefa {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-right: 20px;
+    }
 
-<!-- IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIFINAL PÁGINA ESTILO FILA TAREFAIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII -->
-<!-- IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIINICIO PÁGINA ESTILO RESULTADO CALCULADORAIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII -->
-           #quadrado-externo {
-            background-color: white;
-            border: 2px solid black;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-          #resultado {
-          color: #333333; /* preto escuro mais destacado */
-          font-size: 2.2em; /* tamanho da fonte */
-            background-color: white;
-            border: 2px solid black;
-            padding: 20px;
-            box-sizing: border-box;
-            display: inline-block;
-            background-color: lightblue;
-            padding: 10px; /* Adicione algum espaço interno se necessário */
-        }
+    .option-listtarefa2 {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+    }
 
-        }
-<!-- IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIFINAL PÁGINA ESTILO RESULTADO CALCULADORAIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII -->
-<!-- IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIINICIO PÁGINA ESTILO BLOCO DE NOTASIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII -->
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-        }
-        
-.containerblocodenotas {
-            max-width: 600px;
-            margin: 0 auto; /* Centraliza o container na página */
-            border: 1px solid #96705b;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            background-color: #fffaf0;
+    .option-listtarefa li,
+    .option-listtarefa2 li {
+        border: 1px solid #7f8c8d; /* Cinza escuro */
+        padding: 10px;
+        margin: 5px;
+        width: calc(33.33% - 10px);
+        box-sizing: border-box;
+    }
 
-        #blocodenotas {
-            width: 100%;
-            height: 300px;
-            margin-bottom: 10px;
-<!-- IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIFINAL PÁGINA ESTILO BLOCO DE NOTASIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII -->
+    #quadrado-externo {
+        background-color: #ffffff; /* Fundo branco */
+        border: 2px solid #2980b9; /* Azul escuro */
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    #resultado {
+        color: #333333;
+        font-size: 2.2em;
+        background-color: #ecf0f1; /* Cinza muito claro */
+        border: 2px solid #2980b9; /* Azul escuro */
+        padding: 20px;
+        box-sizing: border-box;
+        display: inline-block;
+    }
+
+    .containerblocodenotas {
+        max-width: 600px;
+        margin: 0 auto;
+        border: 1px solid #3498db; /* Azul claro */
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        background-color: #ffffff; /* Fundo branco */
+    }
 </style>
+
 <!-- IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIFINAL PÁGINA DE TODOS OS ESTILOSIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII -->
 <!-- IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIINÍCIO PÁGINA FUNÇÃOIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII -->
 </head>
