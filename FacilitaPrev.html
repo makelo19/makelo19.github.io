@@ -863,7 +863,6 @@ function copiarCodigo(elementId) {
             <br>
             <label class="texto2">Tipo de Retirada:</label>
             <select id="transferType" class="input-field">
-                <option value="Selecionar">Selecionar</option>                
                 <option value="TOTAL">TOTAL</option>
                 <option value="PARCIAL">PARCIAL</option>
             </select>
@@ -1248,6 +1247,11 @@ function clearHistory() {
     // Atualize a exibição após limpar o histórico
     displayHistory([]);
           }
+
+// Função para restaurar todo o histórico automaticamente ao recarregar a página
+document.addEventListener('DOMContentLoaded', function() {
+    restoreHistorydia();
+});
 
 // Função para restaurar o histórico do dia
 function restoreHistorydia() {
