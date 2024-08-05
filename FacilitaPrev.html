@@ -182,6 +182,51 @@
         color: #333;
     }
 
+      /* QUADRADO DO BLOCO DE NOTAS DA TABELA DE FUNDOS */
+
+    .textoareaanotaçoestabela {
+            width: 100%; /* Ocupa toda a largura disponível */
+            min-height: 400px; /* Altura mínima quadrado interno */
+            max-height: 400px; /* Altura máxima */
+            resize: both; /* Permite redimensionamento em ambas as direções */
+            overflow: auto; /* Adiciona barras de rolagem se necessário */
+            border: 1px solid #ccc; /* Borda leve */
+            border-radius: 5px; /* Bordas arredondadas */
+            padding: 10px; /* Espaçamento interno */
+            box-sizing: border-box; /* Inclui bordas e padding na largura/altura */
+            font-family: Arial, sans-serif; /* Fonte padrão */
+    }
+
+      /* QUADRADO DO BLOCO DE NOTAS DEVOLUÇÕES */
+
+    .textoareablocodenotasdevoluções {
+            width: 100%; /* Ocupa toda a largura disponível */
+            min-height: 400px; /* Altura mínima quadrado interno */
+            max-height: 400px; /* Altura máxima */
+            resize: both; /* Permite redimensionamento em ambas as direções */
+            overflow: auto; /* Adiciona barras de rolagem se necessário */
+            border: 1px solid #ccc; /* Borda leve */
+            border-radius: 5px; /* Bordas arredondadas */
+            padding: 10px; /* Espaçamento interno */
+            box-sizing: border-box; /* Inclui bordas e padding na largura/altura */
+            font-family: Arial, sans-serif; /* Fonte padrão */
+    }
+
+      /* QUADRADO DO BLOCO DE NOTAS SALVAR */
+
+    .textoareablocodenotassalvar {
+            width: 100%; /* Ocupa toda a largura disponível */
+            min-height: 500px; /* Altura mínima quadrado interno */
+            max-height: 600px; /* Altura máxima */
+            resize: both; /* Permite redimensionamento em ambas as direções */
+            overflow: auto; /* Adiciona barras de rolagem se necessário */
+            border: 1px solid #ccc; /* Borda leve */
+            border-radius: 5px; /* Bordas arredondadas */
+            padding: 10px; /* Espaçamento interno */
+            box-sizing: border-box; /* Inclui bordas e padding na largura/altura */
+            font-family: Arial, sans-serif; /* Fonte padrão */
+    }
+
     .history-title {
         font-weight: bold;
         color: #2c3e50; /* Cor de texto mais escura e moderna */
@@ -328,6 +373,7 @@
         padding: 20px;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         background-color: #ffffff; /* Fundo branco */
+
     }
 </style>
 
@@ -813,7 +859,7 @@ function copiarCodigo(elementId) {
 <!—IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIINÍCIO BLOCO DE NOTASIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII -->
 <div class="notes">
       <h1 class="texto";>Anotações</h1>
-    <textarea id="notes" class="input-field" rows="4"></textarea>
+    <textarea id="notes" class="textoareaanotaçoestabela" rows="4"></textarea>
     <br>
 
     <button type="button" class="button" onclick="clearFieldstodos()">Limpar Tudo</button>
@@ -3000,7 +3046,7 @@ Espero que essas informações sejam úteis. Se tiver mais alguma dúvida, sinta
 <body>
 <div class="containerdevolução">
       <h1 class="texto";>Anotações</h1>
-    <textarea id="notesdevolução" class="input-field" rows="4"></textarea>
+    <textarea id="notesdevolução" class="textoareablocodenotasdevoluções" rows="4"></textarea>
     <br>
     <button id="clearNotesdevolução" class="button">Limpar Anotações</button>
     <button id="copyNotesdevolução" class="button">Copiar Anotações</button>
@@ -3033,7 +3079,7 @@ Espero que essas informações sejam úteis. Se tiver mais alguma dúvida, sinta
     <div class="containerblocodenotas">
         <h1 class="texto">Bloco de notas</h1>
 
-        <textarea id="blocodenotas"></textarea>
+        <textarea id="blocodenotas"class="textoareablocodenotassalvar"></textarea>
 
         <button type="button" class="button" onclick="salvarblocodenotas()">Salvar</button>
     </div>
