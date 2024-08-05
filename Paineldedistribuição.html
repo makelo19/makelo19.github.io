@@ -34,10 +34,11 @@ body {
 
 table {
     width: 100%;
+    transform: translate(0%, -40%);
     border-collapse: separate; /* Mantém as bordas das células separadas */
     border-spacing: 0; /* Remove o espaçamento entre as células */
     border: 1px solid #3498db; /* Azul claro para a borda externa da tabela */
-    margin-bottom: 20px;
+    margin-bottom: -160px;
     border-radius: 10px; /* Bordas arredondadas para a tabela */
     overflow: hidden; /* Garante que o conteúdo não ultrapasse as bordas arredondadas */
     background-color: #ffffff; /* Fundo branco para a tabela */
@@ -628,17 +629,20 @@ table input[type="number"] {
             const totalCounts = new Array(timeSlots.length).fill(0);
             const names = {};
             const hourlyCounts = new Array(timeSlots.length).fill(0);
+            let totalSum = 0;
+            let activeCount = 0;
 
             rows.forEach(row => {
                 const cells = Array.from(row.getElementsByTagName('input'));
                 const name = row.getAttribute('data-name');
                 const status = row.cells[2].getElementsByTagName('select')[0].value;
 
-                if (!names[name]) {
-                    names[name] = 0;
-                }
-
                 if (status === 'Em atividade') {
+                    if (!names[name]) {
+                        names[name] = 0;
+                        activeCount++;
+                    }
+
                     cells.forEach((cell, index) => {
                         const value = parseInt(cell.value, 10) || 0;
                         totalCounts[index] += value;
@@ -650,9 +654,8 @@ table input[type="number"] {
                 }
             });
 
-            const totalSum = totalCounts.reduce((a, b) => a + b, 0);
-            const numPeople = Object.keys(names).length;
-            const mediaPorPessoa = numPeople > 0 ? totalSum / numPeople : 0;
+            totalSum = totalCounts.reduce((a, b) => a + b, 0);
+            const mediaPorPessoa = activeCount > 0 ? totalSum / activeCount : 0;
 
             totalSummary.innerHTML = `Total: ${totalSum}`;
 
@@ -700,5 +703,5 @@ table input[type="number"] {
 
         loadData();
     </script>
-    </body>
-    </html>
+</body>
+</html>
