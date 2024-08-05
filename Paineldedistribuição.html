@@ -486,48 +486,48 @@ table input[type="number"] {
         ];
 
         addNameButton.addEventListener('click', function() {
-        const name = document.getElementById('name').value.trim(); // .trim() para remover espaços extras
-        const workHours = document.getElementById('workHours').value.trim(); // .trim() para remover espaços extras
+            const name = document.getElementById('name').value.trim();
+            const workHours = document.getElementById('workHours').value.trim();
 
-        if (name && workHours) {
-        addRow(name, workHours);
-        document.getElementById('name').value = '';
-        document.getElementById('workHours').value = '';
-        updateSummary();
-        saveData();
-        } else {
-        alert("Por favor, preencha todos os campos antes de adicionar.");
-       }
-       });
-
-      clearDataButton.addEventListener('click', function() {
-       const confirmar = confirm("Você deseja realmente limpar todos os dados?");
-       if (confirmar) {
-        const rows = Array.from(dataTable.getElementsByTagName('tr'));
-        rows.forEach(row => {
-            const inputs = Array.from(row.getElementsByTagName('input'));
-            inputs.forEach(input => input.value = '0');
+            if (name && workHours) {
+                addRow(name, workHours);
+                document.getElementById('name').value = '';
+                document.getElementById('workHours').value = '';
+                updateSummary();
+                saveData();
+            } else {
+                alert("Por favor, preencha todos os campos antes de adicionar.");
+            }
         });
-        updateSummary();
-        saveData();
-        } else {
-        console.log("A limpeza de dados foi cancelada.");
-       }
-       });
 
-
-    function copyName(name, row) {
-    const status = row.cells[2].getElementsByTagName('select')[0].value;
-    if (status === 'Em atividade') {
-        navigator.clipboard.writeText(name).then(() => {
-            // O alerta foi removido.
-        }).catch(err => {
-            console.error('Erro ao copiar o nome: ', err);
+        clearDataButton.addEventListener('click', function() {
+            const confirmar = confirm("Você deseja realmente limpar todos os dados?");
+            if (confirmar) {
+                const rows = Array.from(dataTable.getElementsByTagName('tr'));
+                rows.forEach(row => {
+                    const inputs = Array.from(row.getElementsByTagName('input'));
+                    inputs.forEach(input => input.value = '0');
+                });
+                updateSummary();
+                saveData();
+            } else {
+                console.log("A limpeza de dados foi cancelada.");
+            }
         });
-        } else {
-        alert('Não é permitido copiar o nome com o status atual.');
-       }
-       }
+
+        function copyName(name, row) {
+            const status = row.cells[2].getElementsByTagName('select')[0].value;
+            if (status === 'Em atividade') {
+                navigator.clipboard.writeText(name).then(() => {
+                    // O alerta foi removido.
+                }).catch(err => {
+                    console.error('Erro ao copiar o nome: ', err);
+                });
+            } else {
+                alert('Não é permitido copiar o nome com o status atual.');
+            }
+        }
+
         function addRow(name, workHours) {
             let row = document.querySelector(`tr[data-name="${name}"]`);
             if (!row) {
@@ -650,9 +650,13 @@ table input[type="number"] {
                 }
             });
 
-            totalSummary.innerHTML = `Total: ${totalCounts.reduce((a, b) => a + b, 0)}`;
+            const totalSum = totalCounts.reduce((a, b) => a + b, 0);
+            const numPeople = Object.keys(names).length;
+            const mediaPorPessoa = numPeople > 0 ? totalSum / numPeople : 0;
 
-            personSummary.innerHTML = Object.keys(names).map(name => `${name}: ${names[name]}`).join('<br>');
+            totalSummary.innerHTML = `Total: ${totalSum}`;
+
+            personSummary.innerHTML = Object.keys(names).map(name => `${name}: ${names[name]}`).join('<br>') + `<br><br>Média por Pessoa: ${mediaPorPessoa.toFixed(2)}`;
 
             hourlyDistribution.innerHTML = `<br>
                 ${timeSlots.map((slot, index) => `${slot}: ${hourlyCounts[index]}`).join('<br>')}`;
@@ -696,5 +700,5 @@ table input[type="number"] {
 
         loadData();
     </script>
-</body>
-</html>
+    </body>
+    </html>
