@@ -34,15 +34,12 @@ body {
 
 table {
     width: 100%;
-    transform: translate(0%, -40%);
-    border-collapse: separate; /* Mantém as bordas das células separadas */
-    border-spacing: 0; /* Remove o espaçamento entre as células */
-    border: 1px solid #3498db; /* Azul claro para a borda externa da tabela */
-    margin-bottom: -160px;
-    border-radius: 10px; /* Bordas arredondadas para a tabela */
-    overflow: hidden; /* Garante que o conteúdo não ultrapasse as bordas arredondadas */
-    background-color: #ffffff; /* Fundo branco para a tabela */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid #3498db;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 th, td {
@@ -146,7 +143,7 @@ th {
         border-radius: 10px;
         box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
         background-color: #ffffff; /* Fundo branco */
-        margin-bottom: 200px; /* Espaço abaixo do contêiner */
+        margin-bottom: 0px; /* Espaço abaixo do contêiner */
 }
 
 /* TABELA CALCULADORA */
@@ -154,7 +151,7 @@ th {
 .calculadora {
         width: 380px;
         position: center; /* Ou absolute, se necessário */
-        transform: translate(45%, -362%); /* AJUSTE DE ALTURA E CENTRALIZAÇÃO */
+        transform: translate(45%, -334%); /* AJUSTE DE ALTURA E CENTRALIZAÇÃO */
         display: center;
         justify-content: center;
         gap: 5px;
@@ -180,7 +177,7 @@ th {
         .containerblocodenotasdistribuição {
             width: 500px; /* Ajuste a largura do bloco de notas */
             position: center; /* Ou absolute, se necessário */
-            transform: translate(110%, 0%); /* AJUSTE DE ALTURA E CENTRALIZAÇÃO */
+            transform: translate(110%, 8%); /* AJUSTE DE ALTURA E CENTRALIZAÇÃO */
             padding: 20px;
             border: 1px solid #3498db; /* Azul claro */
             border-radius: 10px;
@@ -223,6 +220,7 @@ table input[type="number"] {
 
 /* PAINEL DE RESULTADOS */
 .panel-container {
+    transform: translate(0%, 5%); /* AJUSTE DE ALTURA E CENTRALIZAÇÃO */
     display: flex;
     justify-content: space-between;
     gap: 15px;
