@@ -11,22 +11,13 @@
             padding: 0;
             background: linear-gradient(135deg, #FF4500, #FF8C00, #FFA500);
             color: #ffffff;
-            overflow-x: hidden; /* Evita a rolagem horizontal */
-        }
-
-        .container {
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto; /* Centraliza o contêiner */
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            width: 100%;
-            box-sizing: border-box; /* Inclui padding e border no cálculo da largura */
+            justify-content: center;
+            min-height: 100vh; /* Garante que o body ocupe toda a altura da tela */
+            width: 100vw;
+            overflow-y: auto; /* Permite rolagem vertical */
         }
 
         .textotitulos {
@@ -39,22 +30,23 @@
                 4px 4px 10px rgba(0, 0, 0, 0.4), 
                 6px 6px 15px rgba(0, 0, 0, 0.3),
                 8px 8px 20px rgba(0, 0, 0, 0.2);
-            margin-top: 50px;
-            margin-bottom: 30px;
+            margin: 20px 0;
+            text-align: center;
         }
 
         .section {
             display: flex;
-            justify-content: space-between;
             flex-wrap: wrap;
-            margin-top: 30px;
+            justify-content: center; /* Centraliza as seções horizontalmente */
             width: 100%;
+            max-width: 1200px;
+            box-sizing: border-box;
         }
 
         .section > div {
             flex: 1;
             min-width: 300px;
-            margin: 0 10px;
+            margin: 10px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -63,6 +55,7 @@
         h2 {
             font-size: 1.5em;
             margin-bottom: 10px;
+            text-align: center;
         }
 
         .button {
@@ -91,9 +84,8 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1 class="textotitulos">Transferência - Backoffice</h1> 
-        <div class="section">
+    <div class="textotitulos">Transferência - Backoffice</div>
+    <div class="section">
             <div>
                 <h2>Ferramentas de Atendimento</h2>
                 <a href="https://makelo19.github.io/FacilitaPrev.html" class="button">FacilitaPrev</a>
@@ -127,7 +119,6 @@
                 <a href="https://wizco3-my.sharepoint.com/:x:/g/personal/layssantos_wiz_co/Ee4cKoZwyyNOmzIEB2T90MMBfSwR63nXkiKU3dzh-Dcmzw?wdOrigin=TEAMS-MAGLEV.p2p_ns.rwc&wdExp=TEAMS-TREATMENT&wdhostclicktime=1720701413156&web=1" class="button" target="_blank">Planilha Controle de Transferência</a>
                 <a href="https://wizco3-my.sharepoint.com/:x:/g/personal/layssantos_wiz_co/EShL8xQ-VQZHqorARYWvALsBYgUUEji1UWbPUinQXFktjw?wdOrigin=TEAMS-MAGLEV.undefined_ns.rwc&wdExp=TEAMS-TREATMENT&wdhostclicktime=1722030291436&web=1" class="button" target="_blank">Planilha de Férias</a>
             </div>
-        </div>
     </div>
 </body>
 </html>
