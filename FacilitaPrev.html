@@ -898,7 +898,7 @@ function copiarCodigo(elementId) {
             <label class="texto2">Número da Ocorrência:</label>
             <input type="text" id="numeroocorrencia" class="input-field" maxlength="100" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
             <br>
-            <label class="texto2">Nome do participante:</label>
+            <label class="texto2">Nome do(a) participante:</label>
             <input type="text" id="clientName" class="input-field" maxlength="100" oninput="let trimmedValue = this.value.trimStart(); this.value = trimmedValue.replace(/[^a-zA-Z ]+/g, '').toUpperCase();">
             <br>
             <label class="texto2">Certificado de origem:</label>
@@ -970,7 +970,7 @@ function copiarCodigo(elementId) {
                     <th>Data</th>
                     <th>Número da Ocorrência</th>
                     <th>Tipo de Migração</th>
-                    <th>Nome do participante</th>
+                    <th>Nome do(a) participante</th>
                     <th>Certificado de Origem</th>
                     <th>Certificado de Destino</th>
                     <th>Tipo de Transferência</th>
@@ -1018,7 +1018,7 @@ function copiarCodigo(elementId) {
         return;
     }
     if (!clientNameField.value) {
-        alert("Por favor, preencha o nome do participante.");
+        alert("Por favor, preencha o nome do(a) participante.");
         return;
     }
     if (!originCertificateField.value) {
@@ -1658,7 +1658,7 @@ console.log(`Número de linhas no histórico: ${numberOfLines}`);
             return dd + '-' + mm + '-' + yyyy;
         }
 function saveHistoryToTxt() {
-    let content = "Data\tNúmero da Ocorrência\tTipo de Migração\tNome do participante\tCertificado de Origem\tCertificado de Destino\tTipo de Transferência\tValor da Transferência\tFundo de Destino\n";
+    let content = "Data\tNúmero da Ocorrência\tTipo de Migração\tNome do(a) participante\tCertificado de Origem\tCertificado de Destino\tTipo de Transferência\tValor da Transferência\tFundo de Destino\n";
     const rows = historyTableBody.rows;
     for (let i = 0; i < rows.length; i++) {
         const row = rows[i];
@@ -1739,7 +1739,7 @@ transferTypeField.addEventListener('change', function() {
             <li><input type="checkbox" name="fop" id="Conjugado" value="Conjugado"> Conjugado Fop 021-05</li>
             <li><input type="checkbox" name="fop" id="Convênio Caixa" value="Convênio Caixa"> Convênio Caixa</li>
             <li><input type="checkbox" name="fop" id="Convênio Servidor Público" value="Convênio Servidor Público"> Convênio Servidor Público</li>
-            <li><input type="checkbox" name="fop" id="Dados do participante" value="Dados do participante"> Dados do participante</li>
+            <li><input type="checkbox" name="fop" id="Dados do(a) participante" value="Dados do(a) participante"> Dados do(a) participante</li>
             <li><input type="checkbox" name="fop" id="Dados da Transferência - Certificado de Origem e Destino" value="Dados da Transferência - Certificado de Origem e Destino"> Dados da Transferência - Certificado de Origem e Destino</li>
             <li><input type="checkbox" name="fop" id="Dados da Transferência - Fundo de Origem e Destino" value="Dados da Transferência - Fundo de Origem e Destino"> Dados da Transferência - Fundo de Origem e Destino</li>
             <li><input type="checkbox" name="fop" id="Dados da Transferência - Valor a ser transferido" value="Dados da Transferência - Valor a ser transferido"> Dados da Transferência - Valor a ser Transferido</li>
@@ -1792,7 +1792,7 @@ transferTypeField.addEventListener('change', function() {
 "Pedido de desculpa",
 "Questionamento",
             ],
-            "Dados do participante": [
+            "Dados do(a) participante": [
 "Nome incorreto",
 "CPF incorreto",
 "Modalidade não Indicada",
@@ -1935,7 +1935,7 @@ transferTypeField.addEventListener('change', function() {
 "Sem data de assinatura",
 "Data de assinatura futura",
 "Sem as duas assinaturas",
-"Sem assinatura do participante",
+"Sem assinatura do(a) participante",
 "Sem assinatura e carimbo do gerente",
 "Assinatura eletrônica não validada",
 "Assinatura eletrônica - Documento alterado após assinatura",
@@ -2132,7 +2132,7 @@ transferTypeField.addEventListener('change', function() {
 "Sem data de assinatura",
 "Data de assinatura futura",
 "Sem as duas assinaturas",
-"Sem assinatura do participante",
+"Sem assinatura do(a) participante",
 "Sem assinatura e carimbo do gerente",
 "Assinatura eletrônica não validada",
 "Assinatura eletrônica - Documento alterado após assinatura",
@@ -2291,7 +2291,7 @@ case "Modalidade Incorreta":
                         resultText += `➢ No fop canto superior da direita na primeira página, não foi indicado o tipo do plano correto do(s) certificado(s) XXXXXX (PGBL ou VGBL), para que possamos prosseguir com a sua solicitação, por gentileza marcar a opção correta. Ressaltamos que deve ser marcada a mesma modalidade do(s) plano(s) de origem.\n\n`;
                         break;
 case "Dados cadastrais atualizado não indicado":
-                        resultText += `➢ Na página 1, campo 1, deve ser marcado o item sobre a ciência do participante quanto à obrigatoriedade de manter seus dados cadastrais atualizados, em conformidade com os critérios de boa-fé e veracidade nas declarações e circunstâncias atreladas à contratação do seguro, conforme o art. 765 da Lei 10.406/2022 do Código Civil.\n\n`;
+                        resultText += `➢ Na página 1, campo 1, deve ser marcado o item sobre a ciência do(a) participante quanto à obrigatoriedade de manter seus dados cadastrais atualizados, em conformidade com os critérios de boa-fé e veracidade nas declarações e circunstâncias atreladas à contratação do seguro, conforme o art. 765 da Lei 10.406/2022 do Código Civil.\n\n`;
                         break;
 case "Orientação Transferência de Titularidade":
                         resultText += `➢ Informamos que a alteração de CPF não é permitida, pois afeta diretamente no benefício fiscal. Desta forma, visando solucionar essa solicitação, o (a) participante pode solicitar o resgate total do plano e efetuar uma nova contratação com os dados corretos.\n\n`;
@@ -2315,7 +2315,7 @@ case "Conjugado - Orientação cancelamento pecúlio":
                         resultText += `➢ O certificado XXXXX refere-se a um plano conjugado, onde o pecúlio e as contribuições mensais fazem parte integrante deste tipo de plano. Dessa forma, não é possível realizar o cancelamento individual de um desses serviços, uma vez que ambos se complementam no âmbito desse plano específico. Para efetuar o cancelamento do pecúlio, é necessário emitir um novo certificado que esteja fora das condições do plano conjugado. Isso permitirá que o(a) participante possa cancelar o pecúlio ou as contribuições de maneira independente. O procedimento para a emissão desse novo certificado fora dessa condição é realizado através do FOP 223-05, disponível no site: ( https://portaleconomiario.caixavidaeprevidencia.com.br/extranet/fop-previdencia ). É importante salientar que nesse procedimento, será emitido um novo certificado com novas condições e carências. Recomendamos que o(a) participante esteja ciente dessas novas condições antes de prosseguir com o processo.\n\n`;
                         break;
 case "Conjugado – Idade acima 65 anos":
-                        resultText += `➢ O participante possui a idade de XXX anos, impossibilitando a migração para o plano conjugado.\n\n`;
+                        resultText += `➢ O(a) participante possui a idade de XXX anos, impossibilitando a migração para o plano conjugado.\n\n`;
                         break;
 case "Conjugado – Sugestão outro plano":
                         resultText += `➢ O(a) participante possui recursos suficientes para ter acesso ao fundo CAIXA FIC XXXXXX, localizado na faixa de  R$ 00.001,00 a R$ 00.000,00. Se desejar migrar para essa faixa sem a obrigatoriedade da contratação do plano conjugado, será necessário preencher o formulário FOP 223-05, disponibilizado no site da Extranet (https://portaleconomiario.caixavidaeprevidencia.com.br/extranet/fop-previdencia).\n\n`;
@@ -2393,7 +2393,7 @@ case "Certificado com aporte em andamento":
                         resultText += `➢ Para que possamos dar continuidade com a sua solicitação, há necessidade do aporte ser baixado no sistema, até momento o aporte do(a) participante está com o status "Registrado". Após a conclusão do aporte por gentileza reabrir a solicitação junto com o fop. Ressaltamos que, conforme compartilhado com a rede. pedidos de migração e aportes não podem ser solicitados na mesma data, visto que, podem ocorrer erros referentes ao aporte.\n\n`;
                         break;
 case "Certificado com Portabilidade de saída em andamento":
-                        resultText += `➢ Informamos que a conta bloqueada p/ saídas devido a portabilidade de saída em trâmite, caso o participante queira dar continuidade no processo de transferência é necessário aguardar a finalização.\n\n`;
+                        resultText += `➢ Informamos que a conta bloqueada p/ saídas devido a portabilidade de saída em trâmite, caso o(a) participante queira dar continuidade no processo de transferência é necessário aguardar a finalização.\n\n`;
                         break;
 case "Certificado de Outro CPF":
                         resultText += `➢ O certificado de número XXXXXXXX  informado na proposta de transferência de fundo de investimento pertence a um CPF diferente do CPF registrado na solicitação. Para garantir a segurança e a correta execução do processo, é necessário que os dados do certificado e do CPF estejam alinhados. Solicitamos que verifiquem os dados informados e abram uma nova ocorrência com as informações corretas. Certifiquem-se de que o CPF registrado na ocorrência corresponda ao CPF associado ao certificado de investimento que será transferido.\n\n`;
@@ -2609,7 +2609,7 @@ case "Divergência - Não deseja unificação":
                         resultText += `➢ Ao enviar UM formulário para ambos os certificados de origem no mesmo campo "dados da transferência" e FOP, ocorrerá a unificação dos certificados. Em outras palavras, será gerado um novo certificado para receber os recursos provenientes dos certificados de origem. Caso o(a) participante não deseja unificar os certificados, é necessário preencher um FOP para cada certificado separadamente. Pedimos, por gentileza, que os certificados sejam preenchidos em FOPs distintos e que UM FOP seja encaminhado por cada solicitação.\n\n`;
                         break;
 case "Divergência - Não informou sobre unificação":
-                        resultText += `➢ Se o(a) participante desejar unificar os certificados XXXXXXXX e XXXXXXXX através de uma transferência com nova emissão em uma nova faixa de investimento, todos os certificados devem ser indicados no campo "Certificado de origem", e no campo "Informações complementares”, deve ser informado o certificado que será utilizado como espelho. Será emitido um novo certificado com novas condições, carências e vigência no fundo desejado. Ao enviar um formulário para ambos os certificados de origem no mesmo campo "dados da transferência" e FOP, ocorrerá a unificação dos certificados. Em outras palavras, será gerado um novo certificado para receber os recursos provenientes dos certificados de origem. Caso o participante não deseje unificar os certificados, é necessário preencher um FOP para cada certificado separadamente.\n\n`;
+                        resultText += `➢ Se o(a) participante desejar unificar os certificados XXXXXXXX e XXXXXXXX através de uma transferência com nova emissão em uma nova faixa de investimento, todos os certificados devem ser indicados no campo "Certificado de origem", e no campo "Informações complementares”, deve ser informado o certificado que será utilizado como espelho. Será emitido um novo certificado com novas condições, carências e vigência no fundo desejado. Ao enviar um formulário para ambos os certificados de origem no mesmo campo "dados da transferência" e FOP, ocorrerá a unificação dos certificados. Em outras palavras, será gerado um novo certificado para receber os recursos provenientes dos certificados de origem. Caso o(a) participante não deseje unificar os certificados, é necessário preencher um FOP para cada certificado separadamente.\n\n`;
                         break;
 case "Prev Sócio":
                         resultText += `➢ O certificado de nº XXXX é um PREV SÓCIO. Caso o(a) participante deseja que o novo plano também seja um PREV SÓCIO, é necessário indicar no campo de "Informações complementares” o CNPJ e o nome da Empresa Prev Sócio, que serão cadastrados no momento da emissão do novo plano. No entanto, caso o(a) participante não queira migrar para o mesmo produto, no mesmo campo complementar, deverá ser indicado que ele(a) concorda que o novo plano não será mais um PREV SÓCIO. É importante ressaltar que essa opção também terá sensibilização negativa.\n\n`;
@@ -2656,9 +2656,9 @@ case "Data de assinatura futura":
                         resultText += `➢ A data de assinatura do formulário fornecido é futura (XX/XX/20XX), o que não é permitido de acordo com nossas políticas e regulamentos. Para garantir a conformidade e a segurança dos processos, solicitamos que preencha um novo formulário FOP com a data atual e assine-o corretamente. Dessa forma, poderemos proceder com a sua solicitação de transferência de fundo de investimento.\n\n`;
                         break;
 case "Sem as duas assinaturas":
-                        resultText += `➢ No campo "declaração”, não consta a assinatura do participante e gerente geral junto com o carimbo. Para garantir a conformidade com os padrões da Caixa Vida e Previdência, é necessário que todas as partes envolvidas assinem e o gerente carimbem o formulário de transferência.\n\n`;
+                        resultText += `➢ No campo "declaração”, não consta a assinatura do(a) participante e gerente geral junto com o carimbo. Para garantir a conformidade com os padrões da Caixa Vida e Previdência, é necessário que todas as partes envolvidas assinem e o gerente carimbem o formulário de transferência.\n\n`;
                         break;
-case "Sem assinatura do participante":
+case "Sem assinatura do(a) participante":
                         resultText += `➢ No campo "declaração”, não consta a assinatura do(a) participante. Para garantir a conformidade com os padrões da Caixa Vida e Previdência, é necessário que todas as partes envolvidas assinem e o gerente carimbem o formulário de transferência.\n\n`;
                         break;
 case "Sem assinatura e carimbo do gerente":
@@ -2674,13 +2674,13 @@ case "Assinatura por colagem":
                         resultText += `➢ A assinatura presente no formulário foi substituída por uma colagem, o que está fora da conformidade com os requisitos da Caixa Vida e Previdência. Lamentamos informar que a proposta foi recusada devido a essa irregularidade. Para prosseguir com o processo, é necessário enviar um novo formulário com a assinatura original diretamente no campo obrigatório.\n\n`;
                         break;
 case "Assinaturas repetidas":
-                        resultText += `➢ A mesma página de assinatura foi enviada em dois FOPs diferentes. É importante ressaltar a necessidade de enviar um único anexo contendo a assinatura do participante que autoriza especificamente a abertura do plano desejado. A assinatura presente no formulário não pode ser usada em outra proposta, pois é crucial que haja correspondência entre a assinatura e o plano em questão. Solicitamos que verifique e ajuste o formulário, enviando-nos um novo anexo em uma nova ocorrência, para que possamos dar continuidade ao processo de abertura do novo plano.\n\n`;
+                        resultText += `➢ A mesma página de assinatura foi enviada em dois FOPs diferentes. É importante ressaltar a necessidade de enviar um único anexo contendo a assinatura do(a) participante que autoriza especificamente a abertura do plano desejado. A assinatura presente no formulário não pode ser usada em outra proposta, pois é crucial que haja correspondência entre a assinatura e o plano em questão. Solicitamos que verifique e ajuste o formulário, enviando-nos um novo anexo em uma nova ocorrência, para que possamos dar continuidade ao processo de abertura do novo plano.\n\n`;
                         break;
 case "Assinaturas divergente com o documento":
                         resultText += `➢ Observamos que a assinatura no FOP difere da assinatura no documento do(a) participante. A precisão das informações é crucial para garantir a segurança e conformidade com nossos padrões. Por favor, revise o fop, assegurando que a assinatura do(a) participante corresponda àquela registrada no documento oficial.\n\n`;
                         break;
 case "Assinatura rasurada":
-                        resultText += `➢ Foi constatada a não conformidade no processo de emissão e, portanto, estamos devolvendo a proposta em questão. É importante ressaltar que toda solicitação feita por meio de formulário físico deve conter o aval do participante, representado pela assinatura na presente proposta. Não serão aceitas rasuras, colagens ou reaproveitamento de formulários já atendidos. A fim de garantir a transparência e a integridade do processo, é essencial que todas as informações sejam corretamente registradas e que o formulário seja preenchido de forma legível e sem alterações. Isso nos permite fornecer um serviço eficiente e em conformidade com as diretrizes estabelecidas.\n\n`;
+                        resultText += `➢ Foi constatada a não conformidade no processo de emissão e, portanto, estamos devolvendo a proposta em questão. É importante ressaltar que toda solicitação feita por meio de formulário físico deve conter o aval do(a) participante, representado pela assinatura na presente proposta. Não serão aceitas rasuras, colagens ou reaproveitamento de formulários já atendidos. A fim de garantir a transparência e a integridade do processo, é essencial que todas as informações sejam corretamente registradas e que o formulário seja preenchido de forma legível e sem alterações. Isso nos permite fornecer um serviço eficiente e em conformidade com as diretrizes estabelecidas.\n\n`;
                         break;
 case "Assinatura do responsável menor de 16 anos":
                         resultText += `➢ Para os participantes menores de 16 anos, a solicitação deve ser registrada pelo responsável legal em nome do menor. É necessário encaminhar documentos que comprovem a condição de responsável legal, tanto do menor quanto do responsável. Por favor, verifique esses documentos e envie-os por meio de uma nova ocorrência juntamente com o formulário (FOP).\n\n`;
@@ -2704,11 +2704,11 @@ case "Assinatura a rogo – Orientações":
 Observações relacionadas a contratação:
 
 -[Nome completo do(a) contratante], impossibilitado(a) de assinar, por ser analfabeto(a) / cego (a), assinando a rogo dele (a),
--[Nome completo das testemunhas], como testemunha de contração de plano de previdência, ficando no final desta a impressão dactiloscópica do polegar direito do participante como prova de seu consentimento e a assinatura das 02 testemunhas,
+-[Nome completo das testemunhas], como testemunha de contração de plano de previdência, ficando no final desta a impressão dactiloscópica do polegar direito do(a) participante como prova de seu consentimento e a assinatura das 02 testemunhas,
 
 Importante que se leia as principais cláusulas do contrato (condições para resgate, portabilidade, tributação, modelo de carregamento, taxa de administração, etc.) em voz alta para a contratante, principalmente as restritivas.
 
-Anexar a cópia dos documentos tanto do participante quanto das testemunhas.\n\n`;
+Anexar a cópia dos documentos tanto do(a) participante quanto das testemunhas.\n\n`;
                         break;
 case "Assinatura a rogo – Divergência na Assinatura Titular":
                         resultText += `➢ No FOP consta a assinatura de duas testemunhas no campo ASSINATURA A ROGO. Esse campo deve ser preenchido apenas se o(a) participante, XXXXXXXXXX, não souber ou não puder assinar. Em tal cenário, uma pessoa habilitada assinará por ela, a seu rogo. De acordo com o ordenamento jurídico estabelecido na LEI Nº 10.406, DE 10 DE JANEIRO DE 2002, em casos de contratação de um plano de previdência por pessoas analfabetas, cegas ou que estejam impossibilitadas de assinar por outros motivos, outra pessoa capaz assinará por ele, a seu rogo. Notei que o(a) participante possivelmente assinou o formulário no campo DECLARAÇÃO. Deste modo, o preenchimento do campo ASSINATURA A ROGO torna-se desnecessário. No entanto, se a assinatura for realizada a rogo, é essencial anexar cópias dos documentos tanto do(a) participante quanto das testemunhas (estes documentos não foram anexados). Ademais, se for assinado a rogo, a impressão dactiloscópica do polegar direito do(a) participante deve ser adicionada ao final do documento, evidenciando seu consentimento. É fundamental que as principais cláusulas do contrato (como condições para resgate, portabilidade, tributação, modelo de carregamento, taxa de administração, entre outras) sejam lidas em voz alta para o(a) contratante, dando ênfase especial às cláusulas restritivas.\n\n`;
@@ -2879,7 +2879,7 @@ case "Orientação Unificação -473-15":
 É importante observar se o certificado de destino possui a faixa de investimento desejada. Nesse caso, as características consideradas após a migração serão as do certificado de destino. É importante ressaltar que na unificação, ambos os certificados devem possuir as mesmas características em relação à modalidade (VGBL ou PGBL) e à tributação (progressiva ou regressiva), além de serem da mesma titularidade.\n\n`;
                         break;
 case "Orientação Unificação -473-15 e 223-05":
-                        resultText += `Com base nas orientações fornecidas, é possível realizar a transferência do saldo de um certificado para outro, de acordo com o procedimento específico e o plano do participante.
+                        resultText += `Com base nas orientações fornecidas, é possível realizar a transferência do saldo de um certificado para outro, de acordo com o procedimento específico e o plano do(a) participante.
 
 Para unificar os certificados sem emissão de um novo certificado, é necessário preencher o formulário FOP 473-15 (Solicitação de Transferência Interna entre Certificados), informando os certificados de origem e destino nas colunas correspondentes. É importante observar se o certificado de destino possui a faixa de investimento desejada. Nesse caso, as características consideradas após a migração serão as do certificado de destino.
 
