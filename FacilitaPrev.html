@@ -1775,6 +1775,7 @@ transferTypeField.addEventListener('change', function() {
               <button type="button" class="button" onclick="clearSelections()">Limpar Campos</button>
               <button type="button" class="button" onclick="mostrarFuncao('funcao1')"> Tabela de Fundos</button>
               <button type="button" class="button" onclick="window.open('http://caixaseguros.extranet.caixa/redecaixa/indicadores_prev/fundos_invest_prev/Portfolio_Novos_Fundos.pdf', '_blank')">Portfólio dos Fundos PF</button>
+              <button type="button" class="button" onclick="window.open('https://caixavidaeprevidencia.my.salesforce.com/sfc/p/Do000000IL5b/a/U6000002wKgL/SjcFQ86wa6S00sIq4m4H_EM0P_D2Y.W1QRdd38PsGSI')">Saldo Mínimo</button>
               <button type="button" class="button" onclick="copyTitles()">Copiar Motivo da improcedência</button> 
 
               </div>
@@ -1874,6 +1875,7 @@ transferTypeField.addEventListener('change', function() {
 "Transferência parcial - Sem indicação manter certificado de origem",
 "Transferência parcial - Sem indicação da porcentagem - Multifundos",
 "Orientação transferência parcial",
+"Saldo Mínimo",
 "Valores Bloqueados – SMS",
 "Valores Bloqueados – SMS - Orientações",
             ],
@@ -2080,6 +2082,7 @@ transferTypeField.addEventListener('change', function() {
 "Transferência parcial - Sem indicação manter certificado de origem",
 "Transferência parcial - Sem indicação da porcentagem - Multifundos",
 "Orientação transferência parcial",
+"Saldo Mínimo",
 "Valores Bloqueados – SMS",
 "Valores Bloqueados – SMS - Orientações",
 "Orientação mesma Página/Coluna",
@@ -2510,6 +2513,9 @@ case "Transferência parcial - Sem indicação manter certificado de origem":
                         break;
 case "Orientação transferência parcial":
                         resultText += `➢ "Para que possamos processar sua solicitação de maneira adequada e evitar dúvidas, é necessário esclarecer se a intenção é realizar uma transferência "PARCIAL" do valor para o novo fundo de investimento. Nesse caso, deverá indicar a porcentagem desejada no campo "valor a ser transferido". Adicionalmente, no campo "informações complementares", é importante mencionar que o(a) participante deseja manter o certificado de origem ativo e transferir apenas uma parte do valor para o fundo desejado. Por outro lado, se a intenção é efetuar uma transferência total do valor, é necessário selecionar a opção "TOTAL" no formulário. E ao optar pela transferência total, não é necessário indicar valores específicos, pois o saldo do certificado está sujeito a alterações devido à rentabilidade.\n\n`;
+                        break;
+case "Saldo Mínimo":
+                        resultText += `➢ "Informamos que o cliente possui um certificado com a taxa de adm. de XXXX %, ao resgatar parcialmente ou solicitar uma transferência interna, deverá manter no plano um saldo mínimo de R$ 00,00.\n\n`;
                         break;
 case "Valores Bloqueados – SMS":
                         resultText += `➢ Existem valores bloqueados devido a uma migração pendente, aguardando a assinatura via SMS desde o dia XX/XX/20XX. Recomendamos que o(a) participante prossiga com a assinatura via SMS. Se preferir, pode autorizar o cancelamento dessa pendência através deste canal, junto com o preenchimento do formulário de alteração. Dessa forma, poderemos cancelar a pendência e realizar a migração dos recursos conforme indicado no formulário.\n\n`;
