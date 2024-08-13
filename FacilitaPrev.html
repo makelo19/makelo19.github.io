@@ -402,18 +402,18 @@
   <h1 class="texto";>Tabela de Fundos</h1>
  <label for="faixaValores" class="texto2">Selecione uma faixa de valores:</label>
   <select id="faixaValores">
-    <option value="00-00000">Selecionar</option>
-    <option value="35-10000">de R$35,00 a R$10.000,00</option>
-    <option value="10001-50000">de R$10.001,00 a R$50.000,00</option>
-    <option value="50001-100000">de R$50.001,00 a R$100.000,00</option>
-    <option value="100001-175000">de R$100.001,00 a R$175.000,00</option>
-    <option value="175001-250000">de R$175.001,00 a R$250.000,00</option>
-    <option value="250001-500000">de R$250.001,00 a R$500.000,00</option>
-    <option value="500001-1000000">de R$500.001,00 a R$1.000.000,00</option>
-    <option value="1000001-3000000">de R$1.000.001,00 a R$3.000.000,00</option>
-    <option value="3000001-6000000">de R$3.000.001,00 a R$6.000.000,00</option>
-    <option value="6000001-10000000">de R$6.000.001,00 a R$10.000.000,00</option>
-    <option value="10000001-infinity">acima de R$10.000.001,00</option>
+    <option value="faixado000RF">Selecionar</option>
+    <option value="faixado250RF">de R$35,00 a R$9.999,99</option>
+    <option value="faixado200RF">de R$10.000,00 a R$49.999,99</option>
+    <option value="faixado180RF">de R$50.000,00 a R$99.999,99</option>
+    <option value="faixado150RF">de R$100.000,00 a R$174.999,99</option>
+    <option value="faixado130RF">de R$175.000,00 a R$249.999,99</option>
+    <option value="faixado100RF">de R$250.000,00 a R$499.999,99</option>
+    <option value="faixado70RF">de R$500.000,00 a R$ 999.999,99</option>
+    <option value="faixado60RF">de R$1.000.000,00 a R$2.999.999,99</option>
+    <option value="faixado50RF">de R$3.000.000,00 a R$5.999.999,99</option>
+    <option value="faixado40RF">de R$6.000.000,00 a R$9.999.999,99</option>
+    <option value="faixado30RF">acima de R$10.000.000,00</option>
     <option value="FEDERAL_PREV">FEDERAL_PREV</option>
     <option value="CONVENIOS_SERVIDOR_PUBLICO">CONVENIO_SERVIDOR_PUBLICO</option>
     <option value="CONVENIOS_ECONOMIARIO_100RF">CONVENIO_ECONOMIARIO_100RF</option>
@@ -432,7 +432,7 @@
 
   <script>
     const fundosData = {
-      '00-00000': [
+      'faixado000RF': [
         {
           codigo: 'PGBL:0000 VGBL:0000',
           fundos: [
@@ -453,7 +453,7 @@
           ]
         },
       ],
-      '35-10000': [
+      'faixado250RF': [
         {
           codigo: 'PGBL:1200 VGBL:1209',
           fundos: [
@@ -474,7 +474,7 @@
           ]
         },
       ],
-      '10001-50000': [
+      'faixado200RF': [
         {
           codigo: 'PGBL:1201 VGBL:1210',
           fundos: [
@@ -495,7 +495,7 @@
           ]
         },
       ],
-      '50001-100000': [
+      'faixado180RF': [
         {
           codigo: 'PGBL:1186 VGBL:1190',
           fundos: [
@@ -516,7 +516,7 @@
           ]
         },
       ],
-      '100001-175000': [
+      'faixado150RF': [
         {
           codigo: 'PGBL:1202 VGBL:1211',
           fundos: [
@@ -537,7 +537,7 @@
           ]
         },
       ],
-      '175001-250000': [
+      'faixado130RF': [
         {
           codigo: 'PGBL:1185 VGBL:1189',
           fundos: [
@@ -558,7 +558,7 @@
           ]
         },
       ],
-      '250001-500000': [
+      'faixado100RF': [
         {
           codigo: 'PGBL:1203 VGBL:1212',
           fundos: [
@@ -579,7 +579,7 @@
           ]
         },
       ],
-      '500001-1000000': [
+      'faixado70RF': [
         {
           codigo: 'PGBL:1204 VGBL:1213',
           fundos: [
@@ -600,7 +600,7 @@
           ]
         },
       ],
-      '1000001-3000000': [
+      'faixado60RF': [
         {
           codigo: 'PGBL:1205 VGBL:1214',
           fundos: [
@@ -621,7 +621,7 @@
           ]
         },
       ],
-      '3000001-6000000': [
+      'faixado50RF': [
         {
           codigo: 'PGBL:1206 VGBL:1215',
           fundos: [
@@ -642,7 +642,7 @@
           ]
         },
       ],
-      '6000001-10000000': [
+      'faixado40RF': [
         {
           codigo: 'PGBL:1207 VGBL:1216',
           fundos: [
@@ -662,7 +662,7 @@
           ]
         },
       ],
-      '10000001-infinity': [
+      'faixado30RF': [
         {
           codigo: 'PGBL:1208 VGBL:1217',
           fundos: [
@@ -1167,7 +1167,7 @@ function copiarCodigo(elementId) {
             destCertificateField.value = '';
             fopSelect.value = 'EMISSÃO';
             transferTypeField.value = 'TOTAL';
-            faixaValores.value = '00-00000';
+            faixaValores.value = 'faixado000RF';
             transferValueField.value = '';
             destFundField.value = '';
             generatedTextField.innerText = '';
@@ -1181,7 +1181,7 @@ function copiarCodigo(elementId) {
             destCertificateField.value = '';
             fopSelect.value = 'EMISSÃO';
             transferTypeField.value = 'TOTAL';
-            faixaValores.value = '00-00000';
+            faixaValores.value = 'faixado000RF';
             transferValueField.value = '';
             destFundField.value = '';
             generatedTextField.innerText = '';
