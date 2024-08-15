@@ -965,7 +965,7 @@ function copiarCodigo(elementId) {
     <button class="button" onclick="restoreHistorydia()">Histórico do Dia</button>
     <button class="button" onclick="saveHistoryToTxt2()">Relatório Simplificado</button>
     <label for="searchField" class="texto2">Buscar:</label>
-    <input type="text" id="searchField" placeholder="Buscar...">
+    <input type="text" id="searchField" placeholder="Buscar ocorrência aqui..."oninput="this.value = this.value.replace(/^\s+/, '');">
 
         <table>
             <thead>
