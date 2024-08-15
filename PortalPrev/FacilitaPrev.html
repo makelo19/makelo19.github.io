@@ -963,7 +963,9 @@ function copiarCodigo(elementId) {
     <button class="button" onclick="restoreHistoryDecember()">Dezembro</button>
     <button class="button" onclick="restoreHistory()">Todos os Históricos</button>
     <button class="button" onclick="restoreHistorydia()">Histórico do Dia</button>
-   <button class="button" onclick="saveHistoryToTxt2()">Relatório Simplificado</button>
+    <button class="button" onclick="saveHistoryToTxt2()">Relatório Simplificado</button>
+    <label for="searchField" class="texto2">Buscar:</label>
+    <input type="text" id="searchField" placeholder="Buscar...">
 
         <table>
             <thead>
@@ -1199,7 +1201,36 @@ function copiarCodigo(elementId) {
             document.body.removeChild(textarea);
             alert('Texto copiado para a área de transferência!');
         }
-        
+
+// Função para filtrar a tabela com base no campo de busca
+
+function filterTable() {
+    const searchField = document.getElementById('searchField').value.toLowerCase();
+    const historyTableBody = document.getElementById('historyTableBody');
+    const rows = historyTableBody.getElementsByTagName('tr');
+
+    for (let i = 0; i < rows.length; i++) {
+        const cells = rows[i].getElementsByTagName('td');
+        let match = false;
+
+        for (let j = 0; j < cells.length; j++) {
+            if (cells[j].textContent.toLowerCase().includes(searchField)) {
+                match = true;
+                break;
+            }
+        }
+
+        if (match) {
+            rows[i].style.display = '';
+        } else {
+            rows[i].style.display = 'none';
+        }
+    }
+}
+
+// Adiciona um ouvinte de eventos ao campo de busca
+document.getElementById('searchField').addEventListener('input', filterTable);
+
 // Função para adicionar ao histórico
 function addToHistory() {
     const currentDate = getCurrentDate();
