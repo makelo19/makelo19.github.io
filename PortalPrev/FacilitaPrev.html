@@ -962,10 +962,10 @@ function copiarCodigo(elementId) {
     <button class="button" onclick="restoreHistoryDecember()">Dezembro</button>
     <button class="button" onclick="restoreHistory()">Todos os Históricos</button>
     <button class="button" onclick="restoreHistorydia()">Histórico do Dia</button>
-     <button class="button" onclick="saveHistoryToTxt()">Relatório Completo</button>
+    <button class="button" onclick="saveHistoryToTxt()">Relatório Completo</button>
     <button class="button" onclick="saveHistoryToTxt2()">Relatório Simplificado</button>
     <label for="searchField" class="texto2">Buscar:</label>
-    <input type="text" id="searchField" placeholder="Buscar ocorrência aqui..."oninput="this.value = this.value.replace(/^\s+/, '');">
+    <input type="text"id="searchField"placeholder="Buscar ocorrência aqui..."maxlength="100"oninput="this.value = this.value.replace(/^\s+/, '');"style="width: 40%;border: 1px solid #3498db;">
 
         <table>
             <thead>
