@@ -947,8 +947,7 @@ function copiarCodigo(elementId) {
      <div class="history">
       <h1 class="texto";>Histórico de Atendimentos</h1>
 
-   <button class="button" onclick="clearHistory()">Apagar Tudo</button>
-   <button class="button" onclick="saveHistoryToTxt()">Salvar Histórico em TXT</button>
+    <button class="button" onclick="clearHistory()">Apagar Tudo</button>
     <button class="button" onclick="restoreHistoryJanuary()">Janeiro</button>
     <button class="button" onclick="restoreHistoryFebruary()">Fevereiro</button>
     <button class="button" onclick="restoreHistoryMarch()">Março</button>
@@ -963,6 +962,7 @@ function copiarCodigo(elementId) {
     <button class="button" onclick="restoreHistoryDecember()">Dezembro</button>
     <button class="button" onclick="restoreHistory()">Todos os Históricos</button>
     <button class="button" onclick="restoreHistorydia()">Histórico do Dia</button>
+     <button class="button" onclick="saveHistoryToTxt()">Relatório Completo</button>
     <button class="button" onclick="saveHistoryToTxt2()">Relatório Simplificado</button>
     <label for="searchField" class="texto2">Buscar:</label>
     <input type="text" id="searchField" placeholder="Buscar ocorrência aqui..."oninput="this.value = this.value.replace(/^\s+/, '');">
@@ -1689,15 +1689,26 @@ console.log(`Número de linhas no histórico: ${numberOfLines}`);
 
             return dd + '-' + mm + '-' + yyyy;
         }
+
+// Função Salvar historico txt
+
 function saveHistoryToTxt() {
+    // Obtém o corpo da tabela
+    const historyTableBody = document.getElementById('historyTableBody');
+    
     let content = "Data\tNúmero da Ocorrência\tTipo de Migração\tNome do(a) participante\tCertificado de Origem\tCertificado de Destino\tTipo de Transferência\tValor da Transferência\tFundo de Destino\n";
     const rows = historyTableBody.rows;
+    
     for (let i = 0; i < rows.length; i++) {
         const row = rows[i];
-        for (let j = 0; j < row.cells.length; j++) {
-            content += row.cells[j].innerHTML + "\t";
+        
+        // Verifica se a linha está visível
+        if (row.style.display !== 'none') {
+            for (let j = 0; j < row.cells.length; j++) {
+                content += row.cells[j].textContent.trim() + "\t";
+            }
+            content += "\n";
         }
-        content += "\n";
     }
 
     const dataAtual = formatDateToDDMMYYYY(new Date());
@@ -1711,20 +1722,27 @@ function saveHistoryToTxt() {
 }
 
 function saveHistoryToTxt2() {
+    // Obtém o corpo da tabela
+    const historyTableBody = document.getElementById('historyTableBody');
+
     let content = "Número da Ocorrência\tTipo de Migração\tValor da Transferência\tData\n";
     const rows = historyTableBody.rows;
+
     for (let i = 0; i < rows.length; i++) {
         const row = rows[i];
-        // Inclui apenas as colunas necessárias
-        content += row.cells[1].innerHTML + "\t"; // Número da Ocorrência
-        content += row.cells[2].innerHTML + "\t"; // Tipo de Migração
-        content += row.cells[7].innerHTML + "\t"; // Valor da Transferência
-        content += row.cells[0].innerHTML + "\t"; // Data
-        content += "\n";
+
+        // Inclui apenas as linhas visíveis
+        if (row.style.display !== 'none') {
+            content += row.cells[1].textContent.trim() + "\t"; // Número da Ocorrência
+            content += row.cells[2].textContent.trim() + "\t"; // Tipo de Migração
+            content += row.cells[7].textContent.trim() + "\t"; // Valor da Transferência
+            content += row.cells[0].textContent.trim() + "\t"; // Data
+            content += "\n";
+        }
     }
 
     const dataAtual = formatDateToDDMMYYYY(new Date());
-    const nomeArquivo = `Historico_Simplificado_${dataAtual}.txt`;
+    const nomeArquivo = `Historico_Resumo_${dataAtual}.txt`;
 
     const blob = new Blob([content], { type: "text/plain;charset=utf-8" });
     const link = document.createElement("a");
@@ -1732,6 +1750,7 @@ function saveHistoryToTxt2() {
     link.download = nomeArquivo;
     link.click();
 }
+
 function formatDateToDDMMYYYY(date) {
     const dd = String(date.getDate()).padStart(2, '0');
     const mm = String(date.getMonth() + 1).padStart(2, '0'); // Janeiro é 0!
