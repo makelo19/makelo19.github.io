@@ -918,7 +918,8 @@ function copiarCodigo(elementId) {
             <input type="text" id="transferValue" class="input-field" enabled>
             <br>
             <label class="texto2">Fundo de Destino:</label>
-            <input type="text" id="destFund" class="input-field" maxlength="600">
+            <input type="text" id="destFund" class="input-field" maxlength="600" disabled>
+            <button type="button" class="button" onclick="clearFundo()" style="margin-bottom: 5%;">Apagar Fundo</button>
             <br>
             <label class="texto2">Tipo de Migração:</label>
             <select id="fopSelect" class="input-field">
@@ -939,10 +940,11 @@ function copiarCodigo(elementId) {
 
             </form>
 
-        <div class="output">
-            <span class="texto2">Texto Gerado:</span>
-            <p id="generatedText"></p>
-        </div>
+           <div class="output">
+           <span class="texto2">Texto Gerado:</span>
+           <p id="generatedText" contenteditable="true"></p>
+           </div>
+
     </div>
      <div class="history">
       <h1 class="texto";>Histórico de Atendimentos</h1>
@@ -1159,6 +1161,11 @@ function copiarCodigo(elementId) {
         
             // Adicionar ao histórico
             addToHistory();
+        }
+
+        // Função para limpar fundo
+        function clearFundo() {
+            destFundField.value = '';
         }
         
         // Função para limpar os campos
