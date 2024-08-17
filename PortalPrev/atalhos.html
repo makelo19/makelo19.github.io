@@ -4,118 +4,122 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atalhos Fila de Transferência PF</title>
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #FF4500, #FF8C00, #FFA500);
-            color: #ffffff;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh; /* Garante que o body ocupe toda a altura da tela */
-            width: 100vw;
-            overflow-y: auto; /* Permite rolagem vertical */
-        }
 
-        .textotitulos {
-            font-family: 'Raleway', sans-serif;
-            font-size: 70px;
-            font-weight: bold;
-            color: #ffffff;
-            text-shadow: 
-                2px 2px 5px rgba(0, 0, 0, 0.5), 
-                4px 4px 10px rgba(0, 0, 0, 0.4), 
-                6px 6px 15px rgba(0, 0, 0, 0.3),
-                8px 8px 20px rgba(0, 0, 0, 0.2);
-            margin: 20px 0;
-            text-align: center;
-        }
-
-        .section {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center; /* Centraliza as seções horizontalmente */
-            width: 100%;
-            max-width: 1200px;
-            box-sizing: border-box;
-        }
-
-        .section > div {
-            flex: 1;
-            min-width: 300px;
-            margin: 10px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        h2 {
-            font-size: 1.5em;
-            margin-bottom: 10px;
-            text-align: center;
-        }
-
-        .button {
-            background: #003366;
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            border-radius: 30px;
-            cursor: pointer;
-            font-size: 1em;
-            box-shadow: 0 5px 15px rgba(0, 153, 255, 0.4);
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: block;
-            margin: 10px 0;
-            width: 100%;
-            max-width: 300px;
-            text-align: center;
-        }
-
-        .button:hover {
-            background: #0000FF;
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 86, 179, 0.4);
+<style>
+    body {
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(135deg, #FF4500, #FF8C00, #FFA500);
+        color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100%; /* Garante que o body ocupe toda a altura da tela */
+        width: 100%;
+        overflow-y: auto; /* Permite rolagem vertical */
     }
+
+    .textotitulos {
+        font-family: 'Raleway', sans-serif;
+        font-size: 500%; /* Substituído o tamanho da fonte de 70px por 4.9vw */
+        font-weight: bold;
+        color: #ffffff;
+        text-shadow: 
+            0.14vw 0.14vw 0.35vw rgba(0, 0, 0, 0.5), 
+            0.28vw 0.28vw 0.7vw rgba(0, 0, 0, 0.4), 
+            0.42vw 0.42vw 1.05vw rgba(0, 0, 0, 0.3),
+            0.56vw 0.56vw 1.4vw rgba(0, 0, 0, 0.2);
+        margin: 3%;
+        text-align: center;	
+    }
+
+    .section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Centraliza as seções horizontalmente */
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .section > div {
+        flex: 1;
+        min-width: 25%;
+        margin: 1%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    h2 {
+        font-size: 1.5em;
+        margin-bottom: 0.7vw;
+        text-align: center;
+    }
+
+    .button {
+        background: #003366;
+        color: white;
+        border: none;
+        padding: 1.04vw 2.1vw; /* Substituído por porcentagens */
+        border-radius: 15vw;
+        cursor: pointer;
+        font-size: 1em;
+        box-shadow: 0 3.5vw 10.5vw rgba(0, 153, 255, 0.4);
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: block;
+        margin: 0.7vw 0;
+        width: 100%;
+        max-width: 20.8vw; /* Substituído 300px por porcentagem */
+        text-align: center;
+    }
+
+    .button:hover {
+        background: #0000FF;
+        transform: translateY(-0.35vw); /* Substituído por porcentagem */
+        box-shadow: 0 7vw 14vw rgba(0, 86, 179, 0.4);
+    }
+
     .imagem-logowiz img {
-    width: 90%; /* Ajuste o tamanho da imagem */
-    height: auto; /* Mantém a proporção da imagem */
-    display: block;
-    margin-left: -20%; /* Ajuste centralização da imagem */
-    margin-top: -245%; /* Ajuste de altura da imagem */			
-    margin-right: auto;
-    margin-bottom: 0%;
-    filter: brightness(20%); /* Escurece a imagem */
-        
+        width: 90%; /* Ajuste o tamanho da imagem */
+        height: auto; /* Mantém a proporção da imagem */
+        display: block;
+        margin-left: -12%; /* Ajuste centralização da imagem */
+        margin-top: -235%; /* Ajuste de altura da imagem */            
+        margin-right: auto;
+        margin-bottom: 0%;
+        filter: brightness(20%); /* Escurece a imagem */
     }
-    .imagem-logocaixa img {
-    width: 45%; /* Ajuste o tamanho da imagem */
-    height: auto; /* Mantém a proporção da imagem */
-    display: block;
-    margin-left: 145%; /* Ajuste centralização da imagem */
-    margin-top: -225%; /* Ajuste de altura da imagem */
-    margin-right: auto;
-    margin-bottom: 0%;
 
-    /* Bordas 3D sombreadas */
-    border: 3px solid #ccc; /* Cor e espessura da borda */
-    border-radius: 10px; /* Cantos arredondados (opcional) */
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Sombra para efeito 3D */
+    .imagem-logocaixa img {
+        width: 45%; /* Ajuste o tamanho da imagem */
+        height: auto; /* Mantém a proporção da imagem */
+        display: block;
+        margin-left: 145%; /* Ajuste centralização da imagem */
+        margin-top: -210%; /* Ajuste de altura da imagem */
+        margin-right: auto;
+        margin-bottom: 0%;
+
+        /* Bordas 3D sombreadas */
+        border: 0.21vw solid #ccc; /* Substituído 3px por porcentagem */
+        border-radius: 0.7vw; /* Substituído por porcentagem */
+        box-shadow: 0.35vw 0.35vw 1.05vw rgba(0, 0, 0, 0.3); /* Substituído por porcentagem */
     }
+
     .imagem-bonecolupa img {
-    width: 75%; /* Ajuste o tamanho da imagem */
-    height: auto; /* Mantém a proporção da imagem */
-    display: block;
-    margin-left: -95%; /* Ajuste centralização da imagem */
-    margin-top: -63%; /* Ajuste de altura da imagem */			
-    margin-right: auto;
-    margin-bottom: 0%;
+        width: 75%; /* Ajuste o tamanho da imagem */
+        height: auto; /* Mantém a proporção da imagem */
+        display: block;
+        margin-left: -95%; /* Ajuste centralização da imagem */
+        margin-top: -63%; /* Ajuste de altura da imagem */            
+        margin-right: auto;
+        margin-bottom: 0%;
     }
 </style>
+
 </head>
 <body>  
    <div class="textotitulos">Portal Prev</div>
