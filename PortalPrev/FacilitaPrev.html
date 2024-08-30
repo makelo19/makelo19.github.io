@@ -2049,6 +2049,7 @@ transferTypeField.addEventListener('change', function() {
 "Fop Fora do Layout",
 "Fop Layout diferente",
 "Fop Incompleto",
+"Fop rasurado",
 "Páginas versões diferentes",
 "Outra Extensão",
 "Múltiplos Anexos",
@@ -2244,6 +2245,7 @@ transferTypeField.addEventListener('change', function() {
 "Fop Fora do Layout",
 "Fop Layout diferente",
 "Fop Incompleto",
+"Fop rasurado",
 "Páginas versões diferentes",
 "Outra Extensão",
 "Múltiplos Anexos",
@@ -2833,6 +2835,9 @@ case "Fop Layout diferente":
                         break;
 case "Fop Incompleto":
                         resultText += `➢ O formulário enviado está incompleto, faltando páginas e campos importantes, o que impossibilita o processamento desta solicitação. Recomendamos que o formulário seja enviado por completo em um único arquivo em PDF, mesmo que alguns campos estejam em branco. Isso é fundamental para evitar atrasos ou problemas no processamento. Portanto, solicitamos que verifique o arquivo e nos envie o formulário completo em uma nova ocorrência.\n\n`;
+                        break
+case "Fop rasurado":
+                        resultText += `➢ O FOP é um documento sendo assim não serão aceitas rasuras, colagens ou reaproveitamento de formulários já atendidos. A fim de garantir a transparência e a integridade do processo, é essencial que todas as informações sejam corretamente registradas e que o formulário seja preenchido de forma legível e sem alterações. Isso nos permite fornecer um serviço eficiente e em conformidade com as diretrizes estabelecidas.\n\n`;
                         break
 case "Páginas versões diferentes":
                         resultText += `➢ O formulário encaminhado contém páginas com versões diferentes (XXXX e XXXX). Para prosseguir com a solicitação, é necessário que todas as páginas do formulário pertençam à mesma versão. Solicitamos, por gentileza, verificar e nos enviar o arquivo completo em uma nova ocorrência, garantindo que todas as páginas do formulário sejam da mesma versão e estejam presentes no anexo.\n\n`;
