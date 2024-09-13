@@ -1945,7 +1945,6 @@ transferTypeField.addEventListener('change', function() {
 "Fundo 300 RF Indisponível",
 "Fundo de destino - Downgrade",
 "Fundo de destino fora da faixa",
-"Fundo de destino - Private 80 RF Crédito Privado Plus - Emissão",
 "Limite Excedido Diversificação de Fundos",
 "Multifundos diferentes no mesmo quadrante",
 "Multifundos em FOP's separados",
@@ -1974,6 +1973,8 @@ transferTypeField.addEventListener('change', function() {
 "Sem anexo tela FX",
 "Anexo da tela incompleto",
 "Informações Lâminas Fundos - CRÉDITO PRIVADO PLUS e MULTIGESTOR",
+"Fundo Bloqueado - Private 80 RF Crédito Privado Plus - Emissão",
+"Liquidação Financeira - CAIXA FIC PREV 60 MULTIGESTOR CRED PRIV PREMIUM",
             ],
             "Dados da Transferência - Unificação": [
 "Certificados tributação diferente",
@@ -2161,7 +2162,6 @@ transferTypeField.addEventListener('change', function() {
 "Fundo 300 RF Indisponível",
 "Fundo de destino - Downgrade",
 "Fundo de destino fora da faixa",
-"Fundo de destino - Private 80 RF Crédito Privado Plus - Emissão",
 "Limite Excedido Diversificação de Fundos",
 "Multifundos diferentes no mesmo quadrante",
 "Multifundos em FOP's separados",
@@ -2186,6 +2186,8 @@ transferTypeField.addEventListener('change', function() {
 "Sem anexo tela FX",
 "Anexo da tela incompleto",
 "Informações Lâminas Fundos - CRÉDITO PRIVADO PLUS e MULTIGESTOR",
+"Liquidação Financeira - CAIXA FIC PREV 60 MULTIGESTOR CRED PRIV PREMIUM",
+"Fundo Bloqueado - Private 80 RF Crédito Privado Plus - Emissão",
 "Certificados tributação diferente",
 "Certificados modalidade diferente",
 "Certificado de destino não indicado",
@@ -2536,9 +2538,6 @@ case "Fundo de destino - Downgrade":
 case "Fundo de destino fora da faixa":
                         resultText += `➢ De acordo com a nossa tabela atual de fundos disponível em ( http://caixaseguros.extranet.caixa/redecaixa/indicadores_prev/fundos_invest_prev/index.html ) verificamos que o fundo "CAIXA FIC PREV XXXXXX" não está incluído na faixa do(s) fundo(s) "CAIXA FIC PREV XXXXX". Atualmente, na faixa desejada, temos disponível o fundo "CAIXA FIC PREV XXXXX". Caso o(a) participante tenha interesse em migrar para esse plano, solicitamos gentilmente que ajuste o fundo de destino.\n\n`;
                         break;
-case "Fundo de destino - Private 80 RF Crédito Privado Plus - Emissão":
-                        resultText += `➢ Informamos que o fundo CAIXA FIC PREV 80 RF Crédito Privado Plus já atingiu sua capacidade e o acesso ao fundo está bloqueado no sistema. Desta forma, orientamos que não será possível realizar transferências.\n\n`;
-                        break;
 case "Limite Excedido Diversificação de Fundos":
                         resultText += `➢ No campo "fundo de destino" foi solicitada uma diversificação de saldo que excede o limite de "quatro" fundos diferentes. Gostaríamos de esclarecer que os novos planos têm uma capacidade máxima de "quatro" fundos diferentes. Portanto, solicitamos que indique apenas a quantidade permitida para a diversificação do saldo em novos multifundos. Se desejar uma nova distribuição, sugerimos utilizar o campo "Informações complementares" para detalhar como será feita a distribuição de cada fundo de origem e destino.\n\n`;
                         break;
@@ -2569,6 +2568,12 @@ case "Anexo da tela incompleto":
                         break;
 case "Informações Lâminas Fundos - CRÉDITO PRIVADO PLUS e MULTIGESTOR":
                         resultText += `➢ Informamos que as lâminas dos novos fundos só poderão ser publicadas quando houver um ano de histórico, conforme ordem de Boas práticas da Anbima. Nesse período, as lâminas poderão ser emitidas via QUANTUM. Caso o economiário tenha dúvidas sobre acesso ou uso do sistema, favor entrar em contato (gabrieli.souza@caixavidaeprevidencia.com.br). Os novos fundos foram laçados no dia 01/09/2023, encaminho em anexo as lâminas do fundos e uma analise comparativa. Os fundos vem apresentando retornos positivos, na lâmina comparativa é demostrado a rentabilidade dentro do período de ótimo (desde o inicio do fundo).\n\n`;
+                        break;
+case "Liquidação Financeira - CAIXA FIC PREV 60 MULTIGESTOR CRED PRIV PREMIUM":
+                        resultText += `➢ A liquidação financeira do fundo CAIXA FIC PREV 60 MULTIGESTOR CRED PRIV PREMIUM ocorre em D+7. Por gentileza aguardar o prazo.\n\n`;
+                        break;
+case "Fundo Bloqueado - Private 80 RF Crédito Privado Plus - Emissão":
+                        resultText += `➢ Informamos que o fundo CAIXA FIC PREV 80 RF Crédito Privado Plus já atingiu sua capacidade e o acesso ao fundo está bloqueado no sistema. Desta forma, orientamos que não será possível realizar transferências.\n\n`;
                         break;
 case "Fundos disponíveis":
                         resultText += `➢ Esclarecemos que o fundo CAIXA FIC PREV XXXXXX está disponível no novo formulário que está disponibilizado no site da Extranet. Ele está localizado no campo "dados da transferência", no item "Fundo de origem/destino" na "opção Renda Fixa/Renda Variável" onde está descrito "Lista 1/2/3". Encaminho o Link do site para download do formulário atualizado e as telas indicando onde encontrar o fundo no formulário (https://portaleconomiario.caixavidaeprevidencia.com.br/extranet/fop-previdencia).\n\n`;
