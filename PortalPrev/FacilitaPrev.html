@@ -2029,6 +2029,7 @@ transferTypeField.addEventListener('change', function() {
 "Sem as duas assinaturas",
 "Sem assinatura do(a) participante",
 "Sem assinatura e carimbo do gerente",
+"Assinatura ilegível",
 "Assinatura eletrônica não validada",
 "Assinatura eletrônica - Documento alterado após assinatura",
 "Assinatura por colagem",
@@ -2230,6 +2231,7 @@ transferTypeField.addEventListener('change', function() {
 "Sem as duas assinaturas",
 "Sem assinatura do(a) participante",
 "Sem assinatura e carimbo do gerente",
+"Assinatura ilegível",
 "Assinatura eletrônica não validada",
 "Assinatura eletrônica - Documento alterado após assinatura",
 "Assinatura por colagem",
@@ -2769,6 +2771,9 @@ case "Sem assinatura do(a) participante":
                         break;
 case "Sem assinatura e carimbo do gerente":
                         resultText += `➢ No campo "declaração", não consta a assinatura do gerente geral ou do caixa executivo, juntamente com o carimbo. Para garantir a conformidade com os padrões da Caixa Vida e Previdência, é necessário que todas as partes envolvidas assinem e o gerente geral ou caixa executivo carimbem o formulário de transferência.\n\n`;
+                        break;
+case "Assinatura ilegível":
+                        resultText += `➢ É imprescindível que o formulário anexado esteja legível, permitindo a visualização clara e a compreensão de todos os dados preenchidos em seus respectivos campos. Solicitamos, por gentileza, que verifique o arquivo enviado, especialmente no que diz respeito à assinatura do(a) participante, e reenvie o formulário garantindo que a assinatura esteja nítida e de boa qualidade.\n\n`;
                         break;
 case "Assinatura eletrônica não validada":
                         resultText += `➢ Conforme nossas diretrizes, para propostas postecipadas (FOPs), aceitamos apenas assinaturas manuais ou assinaturas que possam ser validadas pelo site https://validar.iti.gov.br/. Verificamos que a assinatura presente no formulário fornecido não atende aos requisitos de validade. Portanto, solicitamos que realize os ajustes necessários e nos envie o formulário corrigido em uma nova solicitação.\n\n`;
