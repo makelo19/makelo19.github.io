@@ -1953,6 +1953,7 @@ transferTypeField.addEventListener('change', function() {
 "Sugestão de fundo mais atrativo",
 "Sem recursos para o fundo desejado",
 "Sem recursos para o fundo desejado - Orientação Tabela Plano Conjugado",
+"Sem recursos para o fundo desejado - Multigestor",
             ],
             "Dados da Transferência - Valor a ser transferido": [
 "Valor indicado na opção Total",
@@ -2183,6 +2184,7 @@ transferTypeField.addEventListener('change', function() {
 "Sugestão de fundo mais atrativo",
 "Sem recursos para o fundo desejado",
 "Sem recursos para o fundo desejado - Orientação Tabela Plano Conjugado",
+"Sem recursos para o fundo desejado - Multigestor",
 "Sem anexo E-mail de retenção",
 "Sem anexo tela FX",
 "Anexo da tela incompleto",
@@ -2591,6 +2593,9 @@ case "Sem recursos para o fundo desejado":
                         break;
 case "Sem recursos para o fundo desejado - Orientação Tabela Plano Conjugado":
                         resultText += `➢ De acordo com a nossa tabela atual de fundos, disponível em ( http://caixaseguros.extranet.caixa/redecaixa/indicadores_prev/fundos_invest_prev/index.html ), o(a) participante não possui recursos suficientes em previdência para acessar o fundo de investimento desejado. O valor estipulado para acesso ao fundo CAIXA FIC PREV XXXXX pelo FOP 223-06 é de R$ R$ 00.000,00 a R$ 00.999,99. Atualmente, o fundo disponível para o recurso é o CAIXA FIC PREV XXXXX. A tabela observada é referente aos planos conjugados. No entanto, para que o(a) participante possa ter acesso aos benefícios desses planos, é necessário atender a alguns critérios específicos. Existe um valor mínimo de contratação de contribuição de renda no montante de R$ 20,00, bem como um valor mínimo de risco (pecúlio) de R$ XX,00 para a faixa do fundo desejado. Além disso, a contratação do pecúlio requer que o(a) participante tenha uma idade mínima de 16 anos e máxima de 65 anos. A alteração para esse tipo de plano é feita mediante o envio do FOP 021-05, disponibilizado em ( https://portaleconomiario.caixavidaeprevidencia.com.br/extranet/fop-previdencia ).\n\n`;
+                        break;
+case "Sem recursos para o fundo desejado - Multigestor":
+                        resultText += `➢ O(a) participante não possui recursos suficientes em previdência para acessar o fundo de investimento desejado. Os fundos CRÉDITO PRIVADO PLUS, MULTIGESTOR MULTIESTRATÉGIA e MULTIGESTOR CRÉDITO PRIVADO PREMIUM estão disponíveis apenas para clientes com reservas na previdência a partir de R$ 500.000,00, sendo o valor mínimo para transferência de R$ 50.000,00. Por gentileza, verifique o saldo do(a) participante.\n\n`;
                         break;
 case "Valor indicado na opção Total":
                         resultText += `➢ No formulário, ao optar pela transferência TOTAL, não é necessário indicar valores específicos, pois o saldo do certificado está sujeito a alterações devido à rentabilidade. Solicitamos que revise o formulário e remova quaisquer valores indicados na opção de transferência total. Caso deseja transferir parcialmente o valor, marque a opção PARCIAL e especifique a porcentagem desejada.\n\n`;
