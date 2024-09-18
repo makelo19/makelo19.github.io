@@ -1962,6 +1962,7 @@ transferTypeField.addEventListener('change', function() {
 "Valor total divergente",
 "Transferência parcial - Sem indicação manter certificado de origem",
 "Transferência parcial - Sem indicação da porcentagem - Multifundos",
+"Orientação transferência Total - Nova distribuição"
 "Orientação transferência parcial",
 "Saldo Mínimo",
 "Valores Bloqueados – SMS",
@@ -2173,6 +2174,7 @@ transferTypeField.addEventListener('change', function() {
 "Valor total divergente",
 "Transferência parcial - Sem indicação manter certificado de origem",
 "Transferência parcial - Sem indicação da porcentagem - Multifundos",
+"Orientação transferência Total - Nova distribuição"
 "Orientação transferência parcial",
 "Saldo Mínimo",
 "Valores Bloqueados – SMS",
@@ -2614,6 +2616,9 @@ case "Transferência parcial - Sem indicação da porcentagem - Multifundos":
                         break;
 case "Transferência parcial - Sem indicação manter certificado de origem":
                         resultText += `➢ O certificado de origem XXXXX possui o saldo diversificado nos fundos CAIXA FIC PREV XXXXX e CAIXA FIC PREV XXXXXXX. No formulário recebido, consta a indicação de transferência total apenas do fundo CAIXA FIC PREV XXXXXXX. Para atender adequadamente à sua solicitação, sugerimos as seguintes opções: caso a intenção seja migrar parcialmente o valor, conforme indicado no documento, solicitamos que seja especificado no campo "informações complementares" que o certificado de origem deve permanecer ativo, transferindo apenas os recursos do fundo indicado para o novo fundo de destino. Se a transferência for total, pedimos que todos os fundos de origem e destino sejam indicados no formulário (FOP), marcando a opção "TOTAL" para o valor a ser transferido de cada fundo. Desta maneira, procederemos à migração integral dos recursos de cada fundo para os respectivos destinos indicados.\n\n`;
+                        break;
+case "Orientação transferência Total - Nova distribuição":
+                        resultText += `➢ Verificamos que o valor indicado no campo "Parcial" corresponde a 100% do valor atual no certificado de origem. No entanto, os valores indicados não correspondem aos valores reais de cada fundo de origem. Se sua intenção for realizar a transferência total do valor, com uma nova distribuição entre novos fundos, selecione a opção "TOTAL" no formulário. No campo "informações complementares", indique a porcentagem a ser destinada para cada novo fundo. Essas porcentagens serão utilizadas para distribuir os valores de forma adequada entre os novos fundos. Certifique-se de que a soma das porcentagens seja igual a 100%, representando a alocação total do valor constante no certificado de origem.\n\n`;
                         break;
 case "Orientação transferência parcial":
                         resultText += `➢ Para que possamos processar sua solicitação de maneira adequada e evitar dúvidas, é necessário esclarecer se a intenção é realizar uma transferência "PARCIAL" do valor para o novo fundo de investimento. Nesse caso, deverá indicar a porcentagem desejada no campo "valor a ser transferido". Adicionalmente, no campo "informações complementares", é importante mencionar que o(a) participante deseja manter o certificado de origem ativo e transferir apenas uma parte do valor para o fundo desejado. Por outro lado, se a intenção é efetuar uma transferência total do valor, é necessário selecionar a opção "TOTAL" no formulário. E ao optar pela transferência total, não é necessário indicar valores específicos, pois o saldo do certificado está sujeito a alterações devido à rentabilidade.\n\n`;
