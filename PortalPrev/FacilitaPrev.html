@@ -1997,6 +1997,7 @@ transferTypeField.addEventListener('change', function() {
 "Pecúlio - 02 opções indicadas",
 "Pecúlio indicado - Menor de 16 anos",
 "Pecúlio indicado - Prev Crescer Menor de 16 anos",
+"Pecúlio indicado - Prev Crescer Orientações",
 "Pecúlio indicado - Renda por invalidez",
 "Pecúlio indicado - Prev Mulher",
             ],
@@ -2209,6 +2210,7 @@ transferTypeField.addEventListener('change', function() {
 "Pecúlio - 02 opções indicadas",
 "Pecúlio indicado - Menor de 16 anos",
 "Pecúlio indicado - Prev Crescer Menor de 16 anos",
+"Pecúlio indicado - Prev Crescer Orientações",
 "Pecúlio indicado - Renda por invalidez",
 "Pecúlio indicado - Prev Mulher",
 "Dados da contribuição – Divergência Deseja continuar contribuindo",
@@ -2689,6 +2691,9 @@ case "Pecúlio indicado - Menor de 16 anos":
                         break;
 case "Pecúlio indicado - Prev Crescer Menor de 16 anos":
                         resultText += `➢ O certificado n° XXXXXXXX  por se tratar um Prev Crescer, não é possível realizar a transferência do benefício de proteção. O benefício de proteção fica em um outro certificado em nome do(a) responsável, porém atrelado ao certificado do(a) menor. O campo "Transferência do Benefício de Proteção" foi marcado para migrar o pecúlio para o novo plano, Como (o)a participante é menor não será possível realizar a migração ou nova contratação do benefício de proteção para o novo certificado, pois a idade para contratação deste benefício é de 16 à 65 anos. E o(a) participante menor possui idade de XXXXXX anos.\n\n`;
+                        break;
+case "Pecúlio indicado - Prev Crescer Orientações":
+                        resultText += `➢ O plano de previdência em questão, certificado n° XX - PREVCRESCER, trata-se de um produto específico ao menor, ou seja, visa a cobertura deste diante do falecimento do responsável financeiro. Sendo assim, a negociação é baseada na cobertura de proteção, que refere-se a indenização que o menor receberá, e também a cobertura básica que será resgatada pelo menor após a maioridade. Dessa forma, não é possível realizar o cancelamento de nenhuma dessas coberturas, pois uma depende da outra e são destinadas à um fim comum. Logo, entende-se que este plano de previdência somente poderá permanecer ativo se as duas coberturas estiverem ativas. O Prev Crescer é um plano de previdência destinado a crianças desde o seu nascimento até jovens de 21 anos. Este produto tem como principal objetivo investir no futuro da criança, nos estudos, em uma graduação, pós-graduação, intercâmbio ou na realização de sonhos futuros. Para garanti este objetivo, o plano tem em sua composição o benefício de proteção que cuidará do menor caso ocorra a morte do seu responsável financeiro, assim ele não ficará desamparado neste momento difícil, permitindo realizar o que foi proposto inicialmente.  Além disso, o produto oferecer um ciclo de assistências que acompanharão as necessidades da criança e dos jovens, de acordo com a sua faixa etária.  O Prev Crescer é construído com estas características (acumulação de recurso mais proteção). Caso entenda que este produto não tem o melhor formato para atender a sua necessidade, temos um portfólio de produto a sua disposição, incluindo plano somente com acumulação. Para que possamos solucionar essa situação, sugerimos a transferência para um novo plano sem a cobertura de proteção. A transferência poderá ser solicitada pelo cliente em nossa Central de Serviços e Relacionamento ou através do preenchimento do Formulário 223-06, que poderá ser enviado via ASC.\n\n`;
                         break;
 case "Pecúlio indicado - Renda por invalidez":
                         resultText += `➢ Não será possível manter o benefício de proteção Renda por Invalidez no novo plano, pois este benefício não é mais comercializado. Por gentileza verificar junto ao participante a possibilidade da migração dos recursos sem o benefício Renda por Invalidez. Caso o(a) participante esteja de acordo e queira prosseguir, pedimos informar no campo "Informações complementares” e retirar marcação do campo "Transferência do Benefício de proteção”.\n\n`;
