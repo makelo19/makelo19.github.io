@@ -2067,6 +2067,7 @@ transferTypeField.addEventListener('change', function() {
 "Preencheu o fop 021-05 - Plano não conjugado - Nova Faixa",
 "Preencheu o fop 223-06 - Mesma faixa",
 "Preencheu o fop 223-06 - Mesma faixa zerar taxa de carregamento",
+"Preencheu o fop 223-06 - Unificação mesma faixa zerar taxa de carregamento",
 "Preencheu o fop 224-04 - Alteração Nova faixa",
 "Preencheu o fop 224-04 - Faixa antiga indisponivel",
 "Preencheu o fop 473-15 - Alteração Nova faixa",
@@ -2268,6 +2269,7 @@ transferTypeField.addEventListener('change', function() {
 "Preencheu o fop 021-05 - Plano não conjugado - Nova Faixa",
 "Preencheu o fop 223-06 - Mesma faixa",
 "Preencheu o fop 223-06 - Mesma faixa zerar taxa de carregamento",
+"Preencheu o fop 223-06 - Unificação mesma faixa zerar taxa de carregamento",
 "Preencheu o fop 224-04 - Alteração Nova faixa",
 "Preencheu o fop 224-04 - Faixa antiga indisponivel",
 "Preencheu o fop 473-15 - Alteração Nova faixa",
@@ -2918,6 +2920,15 @@ case "Preencheu o fop 223-06 - Mesma faixa zerar taxa de carregamento":
 
 Orientamos que proceda com a alteração de fundos dentro da mesma faixa, através do envio formulário FOP 224-04, disponibilizado no site (https://portaleconomiario.caixavidaeprevidencia.com.br/extranet/fop-previdencia). Lembrando que alteração de fundos dentro da mesma faixa, também está disponível pelo "Serviços online".\n\n`;
                         break;
+case "Preencheu o fop 223-06 - Unificação mesma faixa zerar taxa de carregamento":
+                        resultText += `➢ Informamos que, infelizmente, não poderemos atender a sua solicitação de transferência de fundo de investimento. De acordo com a orientação da área responsável, o certificado de origem XXXXX  já possui a faixa do fundo desejado CAIXA FIC PREV XXX sem necessidade de emitir um novo certificado: 
+
+- Certificado: XXXX
+- Fundo contratado:  CAIXA FIC PREV XXX. 
+
+- Caso o(a) participante deseja unificar os certificados sem emitir um novo certificado, preencha o formulário FOP 473-15 (Solicitação de Transferência Interna entre Certificados). No campo "dados da transferência", informe o(s) número(s) do(s) certificado(s) XXX de origem, e no campo de destino, informe o número do certificado XXXX, nas respectivas colunas. Após a unificação, as características consideradas serão as do certificado de destino. Esse formulário está disponível no site da Extranet (https://portaleconomiario.caixavidaeprevidencia.com.br/extranet/fop-previdencia).\n\n`;
+                        break;
+
 
 case "Preencheu o fop 224-04 - Alteração Nova faixa":
                         resultText += `➢ O FOP 224-04 (Solicitação de Diversificação entre Fundos de Investimento) é exclusivo para a alteração ou diversificação de fundos dentro do mesmo certificado e faixa de investimento, sem emissão de novos certificados. Caso o(a) participante deseja realizar uma transferência com a emissão de um novo certificado, em uma nova faixa de investimento, com novas condições, carência e vigência, pedimos gentilmente que envie o FOP 223-06 (Solicitação de Transferência com Alteração de Taxa). O formulário pode ser encontrado através do link: ( https://portaleconomiario.caixavidaeprevidencia.com.br/extranet/fop-previdencia ).\n\n`;
