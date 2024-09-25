@@ -1948,6 +1948,7 @@ transferTypeField.addEventListener('change', function() {
 "Limite Excedido Diversificação de Fundos",
 "Multifundos diferentes no mesmo quadrante",
 "Multifundos em FOP's separados",
+"Multifundos Faixa Diferente",
 "Fundos disponíveis",
 "Campos disponíveis",
 "Sugestão de fundo mais atrativo",
@@ -2170,6 +2171,7 @@ transferTypeField.addEventListener('change', function() {
 "Limite Excedido Diversificação de Fundos",
 "Multifundos diferentes no mesmo quadrante",
 "Multifundos em FOP's separados",
+"Multifundos Faixa Diferente",
 "Valor indicado na opção Total",
 "Valor indicado na opção Parcial",
 "Valor não indicado",
@@ -2560,6 +2562,9 @@ case "Multifundos em FOP's separados":
 - Verificamos que foram enviados dois formulários separados, um para cada fundo de origem (CAIXA FIC PREV XXXXXXX e CAIXA FIC PREV XXXXXXXX). Essa forma de preenchimento indica o desejo de gerar dois novos certificados separados para cada fundo de origem. Caso essa seja sua intenção, solicitamos que reabra a solicitação com os mesmos anexos, sem realizar alterações. No entanto, para separar os saldos, é importante aguardar a conclusão da primeira solicitação de transferência em até 7 dias e, após esse prazo, encaminhar o segundo formulário para que seja emitido o certificado correspondente ao segundo fundo.
 
 - Caso sua intenção seja migrar para um novo certificado em multifundos, é necessário indicar todos os fundos de origem e destino em um único formulário (FOP) no campo "Dados da Transferencia". Marque a opção "TOTAL" para indicar a transferência total do valor de cada fundo. Dessa forma, migraremos a totalidade dos recursos de cada fundo em um único certificado a ser emitido.\n\n`;
+                        break;
+case "Multifundos Faixa Diferente":
+                        resultText += `➢ Conforme a tabela atual de fundos disponível em http://caixaseguros.extranet.caixa/redecaixa/indicadores_prev/fundos_invest_prev/index.html, verificamos que o fundo "CAIXA FIC PREV XXXXX" não está na mesma categoria que o fundo "CAIXA FIC PREV XXXXXXX". Sendo assim, será necessário emitir dois novos certificados, com um formulário (FOP) preenchido para cada categoria. Para efetuar a separação dos saldos, primeiro, deve-se solicitar a migração parcial por meio do primeiro FOP. Após a conclusão dessa transferência, que pode levar até 7 dias, o segundo formulário deverá ser enviado para que o certificado correspondente ao segundo fundo seja emitido.\n\n`;
                         break;
 case "Orientação mesma Página/Coluna":
                         resultText += `➢ Para fins de conformidade e compreensão dos dados, por gentileza preencher na mesma página/coluna, o certificado de origem, fundo de origem, valor a ser transferido (TOTAL ou PARCIAL) e fundo de destino.\n\n`;
