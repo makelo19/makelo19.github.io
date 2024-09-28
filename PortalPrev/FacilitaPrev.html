@@ -926,12 +926,6 @@ function copiarCodigo(elementId) {
             <label class="texto2">Data:</label>
             <input type="text" id="currentDate" class="input-field" disabled>
             <br>
-            <label class="texto2">Número da Ocorrência:</label>
-            <input type="text" id="numeroocorrencia" class="input-field" maxlength="100" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
-            <br>
-            <label class="texto2">Nome do(a) participante:</label>
-            <input type="text" id="clientName" class="input-field" maxlength="100" oninput="let trimmedValue = this.value.trimStart(); this.value = trimmedValue.replace(/[^a-zA-Z ]+/g, '').toUpperCase();">
-            <br>
             <label class="texto2">Certificado de origem:</label>
             <input type="text" id="originCertificate" class="input-field" maxlength="100" oninput="this.value = this.value.replace(/^\s+/,'');">
             <br>
@@ -963,7 +957,6 @@ function copiarCodigo(elementId) {
                 <option value="TAREFA - BLOQUEIO POR INCONSTÊNCIA NA BASE DE SALDO">TAREFA - BLOQUEIO POR INCONSTÊNCIA NA BASE DE SALDO</option>
             </select>
             <br>
-
             <button type="button" class="button" onclick="clearFields()">Limpar Dados</button>
             <button type="button" class="button" onclick="generateText()">Gerar Texto</button>
             <button type="button" class="button" onclick="copyToClipboard()">Copiar Texto</button>
@@ -974,6 +967,14 @@ function copiarCodigo(elementId) {
            <span class="texto2">Texto Gerado:</span>
            <p id="generatedText" contenteditable="true"></p>
            </div>
+
+            <h1 class="texto">Dados da Planilha Multigestor</h1>
+            <label class="texto2">Número da Ocorrência:</label>
+            <input type="text" id="numeroocorrencia" class="input-field" maxlength="100" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+            <br>
+            <label class="texto2">Nome do(a) participante:</label>
+            <input type="text" id="clientName" class="input-field" maxlength="100" oninput="let trimmedValue = this.value.trimStart(); this.value = trimmedValue.replace(/[^a-zA-Z ]+/g, '').toUpperCase();">
+            <br>
 
     </div>
      <div class="history">
@@ -1048,14 +1049,7 @@ function copiarCodigo(elementId) {
             const transferValue = transferValueField.value;
 
    // Verifica se os campos obrigatórios estão preenchidos
-    if (!numeroocorrenciaField.value) {
-        alert("Por favor, preencha o número da ocorrência.");
-        return;
-    }
-    if (!clientNameField.value) {
-        alert("Por favor, preencha o nome do(a) participante.");
-        return;
-    }
+
     if (!originCertificateField.value) {
         alert("Por favor, preencha o número do certificado de origem.");
         return;
@@ -1068,10 +1062,6 @@ function copiarCodigo(elementId) {
         alert("Por favor, selecione o tipo de retirada (TOTAL ou PARCIAL).");
         return;
     }
-    if (!transferValueField.value) {
-        alert("Por favor, insira o valor da transferência.");
-        return;
-    }
     if (!destFundField.value) {
         alert("Por favor, preencha o fundo de destino.");
         return;
@@ -1081,35 +1071,31 @@ function copiarCodigo(elementId) {
         
             if (selectedFOP === 'EMISSÃO') {
                 if (transferType === 'TOTAL') {
-                    text = `Informamos que foi emitido novo certificado de número ${destCertificateField.value}, de acordo com o certificado de origem do(a) participante ${clientNameField.value}. 
-
-                                A transferência total dos recursos do(s) certificado(s) de n°(s) ${originCertificateField.value}, para o certificado de n° ${destCertificateField.value} com o(s) fundo(s) de nome ${destFundField.value} foi realizada com sucesso, na data ${getCurrentDate()}. 
+                    text = `Informamos que o novo certificado de número ${destCertificateField.value}, foi emitido conforme o certificado de origem. A transferência total dos recursos do(s) certificado(s) de n°(s) ${originCertificateField.value}, foi realizado com sucesso para o certificado de n° ${destCertificateField.value} com o(s) fundo(s) de nome ${destFundField.value}, na data ${getCurrentDate()}. 
                     
                             Espero ter ajudado, mas qualquer dúvida que você tiver, poderá entrar em contato novamente.`;
                 } else if (transferType === 'PARCIAL') {
-                    text = `Informamos que foi emitido novo certificado de número ${destCertificateField.value}, de acordo com o certificado de origem do(a) participante ${clientNameField.value}. 
-     
-                               A transferência parcial no valor de R$ ${transferValue} dos recursos do(s) certificado(s) de n°(s) ${originCertificateField.value}, para o certificado de n° ${destCertificateField.value} com o(s) fundo(s) de nome ${destFundField.value} foi realizada com sucesso, na data ${getCurrentDate()}. 
+                    text = `Informamos que o novo certificado de número ${destCertificateField.value}, foi emitido conforme o certificado de origem. A transferência parcial no valor de R$ ${transferValue} dos recursos do(s) certificado(s) de n°(s) ${originCertificateField.value}, foi realizado com sucesso para o certificado de n° ${destCertificateField.value} com o(s) fundo(s) de nome ${destFundField.value}, na data ${getCurrentDate()}. 
 
                             Espero ter ajudado, mas qualquer dúvida que você tiver, poderá entrar em contato novamente.`;
                 }
             } else if (selectedFOP === 'DIVERSIFICAÇÃO') {
                 if (transferType === 'TOTAL') {
-                    text = `Informamos que a transferência total dos recursos do(s) certificado(s) de n°(s) ${originCertificateField.value} do(a) participante ${clientNameField.value}, foi realizada com sucesso para o(s) fundo(s) de nome ${destFundField.value}, na data ${getCurrentDate()}. 
+                    text = `Informamos que a transferência total dos recursos do(s) certificado(s) de n°(s) ${originCertificateField.value}, foi realizada com sucesso para o(s) fundo(s) de nome ${destFundField.value}, na data ${getCurrentDate()}. 
                             
                             Espero ter ajudado, mas qualquer dúvida que você tiver, poderá entrar em contato novamente.`;
                 } else if (transferType === 'PARCIAL') {
-                    text = `Informamos que a transferência parcial no valor de R$ ${transferValue} dos recursos do(s) certificado(s) de n°(s) ${originCertificateField.value} do(a) participante ${clientNameField.value}, foi realizada com sucesso para o(s) fundo(s) de nome ${destFundField.value}, na data ${getCurrentDate()}. 
+                    text = `Informamos que a transferência parcial no valor de R$ ${transferValue} dos recursos do(s) certificado(s) de n°(s) ${originCertificateField.value}, foi realizada com sucesso para o(s) fundo(s) de nome ${destFundField.value}, na data ${getCurrentDate()}. 
                            
                             Espero ter ajudado, mas qualquer dúvida que você tiver, poderá entrar em contato novamente.`;
                 }
             } else if (selectedFOP === 'UNIFICAÇÃO') {
                 if (transferType === 'TOTAL') {
-                    text = `Informamos que a transferência total dos recursos do(s) certificado(s) de n°(s) ${originCertificateField.value} do(a) participante ${clientNameField.value}, foi realizada com sucesso para o certificado de n° ${destCertificateField.value} com o(s) fundo(s) de nome ${destFundField.value}, na data ${getCurrentDate()}. 
+                    text = `Informamos que a transferência total dos recursos do(s) certificado(s) de n°(s) ${originCertificateField.value}, foi realizada com sucesso para o certificado de n° ${destCertificateField.value} com o(s) fundo(s) de nome ${destFundField.value}, na data ${getCurrentDate()}. 
 
                             Espero ter ajudado, mas qualquer dúvida que você tiver, poderá entrar em contato novamente.`;
                 } else if (transferType === 'PARCIAL') {
-                    text = `Informamos que a transferência parcial no valor de R$ ${transferValue} dos recursos do(s) certificado(s) de n°(s) ${originCertificateField.value} do(a) participante ${clientNameField.value}, foi realizada com sucesso para o certificado de n° ${destCertificateField.value} com o(s) fundo(s) de nome ${destFundField.value}, na data ${getCurrentDate()}. 
+                    text = `Informamos que a transferência parcial no valor de R$ ${transferValue} dos recursos do(s) certificado(s) de n°(s) ${originCertificateField.value}, foi realizada com sucesso para o certificado de n° ${destCertificateField.value} com o(s) fundo(s) de nome ${destFundField.value}, na data ${getCurrentDate()}. 
 
                             Espero ter ajudado, mas qualquer dúvida que você tiver, poderá entrar em contato novamente.`;
                 }
