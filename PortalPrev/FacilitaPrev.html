@@ -1908,6 +1908,7 @@ transferTypeField.addEventListener('change', function() {
 "Certificado de origem não indicado",
 "Certificado de origem incorreto",
 "Certificado por fim de diferimento",
+"Certificado por fim de diferimento - Plano Viver+Fácil",
 "Certificado em carência – 30 dias",
 "Certificado em carência – 60 dias",
 "Certificado em Pré-conta",
@@ -2133,6 +2134,7 @@ transferTypeField.addEventListener('change', function() {
 "Certificado de destino não indicado",
 "Certificado de origem incorreto",
 "Certificado por fim de diferimento",
+"Certificado por fim de diferimento - Plano Viver+Fácil",
 "Certificado em carência – 30 dias",
 "Certificado em carência – 60 dias",
 "Certificado em Pré-conta",
@@ -2468,6 +2470,9 @@ case "Certificado de origem incorreto":
                         break;
 case "Certificado por fim de diferimento":
                         resultText += `➢ O prazo de diferimento do certificado de n° XXXXXXXXX expirou. Não é possível realizar nenhuma movimentação financeira no certificado sem regularizar o prazo de diferimento. A alteração do prazo pode ser efetuada através dos Serviços Online ou da Central de Atendimento, utilizando os seguintes números: 3004 4000 (Capitais e regiões metropolitanas) ou 0800 702 4000 (Demais regiões). Pedimos que, por gentileza, abra uma nova solicitação com o Formulário de Pedido (FOP) anexo após a alteração do prazo de diferimento.\n\n`;
+                        break;
+case "Certificado por fim de diferimento - Plano Viver+Fácil":
+                        resultText += `➢ O certificado n° XXXXXX refere-se ao plano Viver+Fácil. Verificamos que o prazo de diferimento desse certificado expirou. Para prosseguir com a movimentação dos recursos, é necessário, primeiramente, alterar o prazo de diferimento. Como esse tipo de plano não permite alterações pelos "Serviços Online", mas apenas por este canal, junto com a emissão do novo plano, solicitamos que, na nova ocorrência, a nova data de diferimento seja informada no campo "Informações Complementares" do FOP ou na descrição da ocorrência. Dessa forma, poderemos emitir o novo certificado com o novo prazo e realizar a migração dos recursos conforme informado.\n\n`;
                         break;
 case "Certificado em carência – 30 dias":
                         resultText += `➢ O certificado de origem de número XXXXXX encontra-se em período de carência para realização de transferência interna. Visto a data de inclusão de XX/XX/20XX.  A carência para transferência interna, entre certificados existentes, é de 30 dias e, entre fundos de investimentos do mesmo certificado, de 30 dias para a 1ª transferência e depois de 7 em 7 dias. Por gentileza encaminhar outro formulário novamente após o período de carência para que possamos efetuar a transferência de saldo conforme solicitado.\n\n`;
