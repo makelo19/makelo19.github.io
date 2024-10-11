@@ -2010,6 +2010,7 @@ transferTypeField.addEventListener('change', function() {
 "Divergência na matrícula",
 "Divergência na agência",
 "Divergência na agência - com o dígito",
+"Divergência na agência - Outro UF",
 "Agência digital indicada",
 "Orientação Alteração da Agência",
             ],
@@ -2220,6 +2221,7 @@ transferTypeField.addEventListener('change', function() {
 "Divergência na matrícula",
 "Divergência na agência",
 "Divergência na agência - com o dígito",
+"Divergência na agência - Outro UF",
 "Agência digital indicada",
 "Orientação Alteração da Agência",
 "Data de assinatura vencida",
@@ -2746,6 +2748,9 @@ case "Divergência na agência":
                         break;
 case "Divergência na agência - com o dígito":
                         resultText += `➢ A agência de venda física com 04 dígitos numéricos não foi preenchida corretamente no campo "dados do indicador”. Por questão de conformidade informamos que não se faz necessário a presença do digito. Por gentileza, realizar a correção do campo indicado, informando apenas a agência de venda física com os 04 dígitos numéricos exigidos, para que possamos emitir um novo certificado no fundo desejado.\n\n`;
+                        break;
+case "Divergência na agência - Outro UF":
+                        resultText += `➢ Identificamos uma divergência no preenchimento do campo 5 (Dados do Indicador) do formulário. A agência física informada no campo 5 é diferente da agência do certificado de origem. Antes de prosseguirmos com a migração, precisamos confirmar se o dado fornecido está correto. É importante ter atenção a esse detalhe, pois o preenchimento incorreto do formulário pode resultar em erros na emissão do novo certificado e causar atrasos na resolução da solicitação.\n\n`;
                         break;
 case "Agência digital indicada":
                         resultText += `➢ No campo "Dados do Indicador", foi indicado um número de agência digital. No entanto, é necessário fornecer o número da agência física no item "Agência Física". Ressaltamos que, devido a essa divergência, não podemos prosseguir com o processo. Recomendamos que revise o preenchimento do campo indicado e faça a correção necessária, informando corretamente o número da agência física.\n\n`;
