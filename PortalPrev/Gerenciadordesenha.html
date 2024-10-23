@@ -64,8 +64,8 @@
             background-color: #0056b3;
         }
         .system-link.selected {
-            background-color: #696969;
-            color: #000;
+            background-color: #006400;
+            color: white;
         }
         .edit-section {
             display: none;
@@ -92,6 +92,7 @@
     transition: all 0.1s;
     height: auto;
     line-height: normal;
+    margin-bottom: 20px; /* Espaço abaixo do contêiner */
         }
         button:hover {
     background: #006400;
@@ -231,42 +232,45 @@
 
   <h1 class="textotitulos";>Minhas Senhas</h1> 
 
-    <div class="container">
-        <h1>Gerenciador de Senhas</h1>
-        <form id="passwordForm">
-            <input type="text" id="systemName" placeholder="Nome do Sistema" required>
-            <input type="text" id="username" placeholder="Nome de Usuário" required>
-            <div class="button-group">
-                <input type="password" id="password" placeholder="Senha" required>
-                <button type="button" class="toggle-btn" onclick="togglePassword('password', this)">Mostrar Senha</button>
-            </div>
-            <textarea id="notes" placeholder="Observações" rows="4"></textarea>
-            <button type="submit">Salvar Senha</button>
-        </form>
-        <div id="systemList"></div>
-        <div class="edit-section" id="editSection">
-            <div class="button-group">
-                <input type="text" id="editUsername" placeholder="Nome de Usuário">
-                <button class="copy-btn" onclick="copyToClipboard('editUsername', this)">Copiar Usuário</button>
-            </div>
-            <div class="button-group">
-                <input type="password" id="editPassword" placeholder="Senha">
-                <button class="toggle-btn" onclick="togglePassword('editPassword', this)">Mostrar Senha</button>
-                <button class="copy-btn" onclick="copyPassword('editPassword', this)">Copiar Senha</button>
-            </div>
-            <div class="button-group">
-                <textarea id="editNotes" placeholder="Observações" rows="4"></textarea>
-                <button class="copy-btn" onclick="copyToClipboard('editNotes', this)">Copiar Observações</button>
-                <button id="copyAllBtn" class="copy-btn" onclick="copyAllDetails(this)">Copiar Tudo</button>
+<div class="container">
+    <h1>Senhas Salvas</h1>
 
-            </div>
-
+    <div id="systemList"></div>
+    
+    <div class="edit-section" id="editSection">
+        <div class="button-group">
+            <input type="text" id="editUsername" placeholder="Nome de Usuário">
+            <button class="copy-btn" onclick="copyToClipboard('editUsername', this)">Copiar Usuário</button>
         </div>
-            <button class="delete-btn" onclick="confirmDelete()">Excluir Sistema Selecionado</button>
-            <button class="backup-btn" onclick="backupPasswords()">Fazer Backup das Senhas</button> 
-            <button id="saveEditBtn">Salvar Alterações</button>
-
+        <div class="button-group">
+            <input type="password" id="editPassword" placeholder="Senha">
+            <button class="toggle-btn" onclick="togglePassword('editPassword', this)">Mostrar Senha</button>
+            <button class="copy-btn" onclick="copyPassword('editPassword', this)">Copiar Senha</button>
+        </div>
+        <div class="button-group">
+            <textarea id="editNotes" placeholder="Observações" rows="4"></textarea>
+            <button class="copy-btn" onclick="copyToClipboard('editNotes', this)">Copiar Observações</button>
+            <button id="copyAllBtn" class="copy-btn" onclick="copyAllDetails(this)">Copiar Tudo</button>
+        </div>
     </div>
+
+    <button class="delete-btn" onclick="confirmDelete()">Excluir Sistema Selecionado</button>
+    <button class="backup-btn" onclick="backupPasswords()">Fazer Backup das Senhas</button> 
+    <button id="saveEditBtn">Salvar Alterações</button>
+
+    <h1>Formulário de Senha</h1>
+
+    <form id="passwordForm">
+        <input type="text" id="systemName" placeholder="Nome do Sistema" required>
+        <input type="text" id="username" placeholder="Nome de Usuário" required>
+        <div class="button-group">
+            <input type="password" id="password" placeholder="Senha" required>
+            <button type="button" class="toggle-btn" onclick="togglePassword('password', this)">Mostrar Senha</button>
+        </div>
+        <textarea id="notes" placeholder="Observações" rows="4"></textarea>
+        <button type="submit">Salvar Senha</button>
+    </form>
+</div>
 
     <script>
         let currentEditIndex = null;
