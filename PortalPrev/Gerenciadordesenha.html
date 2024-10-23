@@ -250,12 +250,13 @@
         <div class="button-group">
             <textarea id="editNotes" placeholder="Observações" rows="4"></textarea>
             <button class="copy-btn" onclick="copyToClipboard('editNotes', this)">Copiar Observações</button>
-            <button id="copyAllBtn" class="copy-btn" onclick="copyAllDetails(this)">Copiar Tudo</button>
+            
         </div>
     </div>
 
-    <button class="delete-btn" onclick="confirmDelete()">Excluir Sistema Selecionado</button>
+    <button class="delete-btn" onclick="confirmDelete()">Excluir Sistema</button>
     <button class="backup-btn" onclick="backupPasswords()">Fazer Backup das Senhas</button> 
+    <button id="copyAllBtn" class="copy-btn" onclick="copyAllDetails(this)">Copiar Tudo</button>
     <button id="saveEditBtn">Salvar Alterações</button>
 
     <h1>Formulário</h1>
