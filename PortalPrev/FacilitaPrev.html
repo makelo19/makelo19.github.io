@@ -924,11 +924,11 @@ function copiarCodigo(elementId) {
 <div class="container">
             <h1 class="texto">Dados da Transferência</h1>
             <form id="textGenerator">
-            <label class="texto2">Data:</label>
-            <input type="text" id="currentDate" class="input-field" disabled>
-            <br>
             <label class="texto2">Número da Ocorrência:</label>
             <input type="text" id="numeroocorrencia" class="input-field" maxlength="100" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+            <br>
+            <label class="texto2">Data:</label>
+            <input type="text" id="currentDate" class="input-field" disabled>
             <br>
             <label class="texto2">Certificado de origem:</label>
             <input type="text" id="originCertificate" class="input-field" maxlength="100" oninput="this.value = this.value.replace(/^\s+/,'');">
