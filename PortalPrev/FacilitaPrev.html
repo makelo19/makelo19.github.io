@@ -927,6 +927,9 @@ function copiarCodigo(elementId) {
             <label class="texto2">Data:</label>
             <input type="text" id="currentDate" class="input-field" disabled>
             <br>
+            <label class="texto2">Número da Ocorrência:</label>
+            <input type="text" id="numeroocorrencia" class="input-field" maxlength="100" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+            <br>
             <label class="texto2">Certificado de origem:</label>
             <input type="text" id="originCertificate" class="input-field" maxlength="100" oninput="this.value = this.value.replace(/^\s+/,'');">
             <br>
@@ -970,9 +973,6 @@ function copiarCodigo(elementId) {
            </div>
 
             <h1 class="texto">Dados Adicionais</h1>
-            <label class="texto2">Número da Ocorrência:</label>
-            <input type="text" id="numeroocorrencia" class="input-field" maxlength="100" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
-            <br>
             <label class="texto2">Nome do(a) participante:</label>
             <input type="text" id="clientName" class="input-field" maxlength="100" oninput="let trimmedValue = this.value.trimStart(); this.value = trimmedValue.replace(/[^a-zA-Z ]+/g, '').toUpperCase();">
             <br>
@@ -1050,6 +1050,10 @@ function copiarCodigo(elementId) {
             const transferValue = transferValueField.value;
 
    // Verifica se os campos obrigatórios estão preenchidos
+    if (!numeroocorrenciaField.value) {
+        alert("Por favor, preencha o número da ocorrência.");
+        return;
+    }
 
     if (!originCertificateField.value) {
         alert("Por favor, preencha o número do certificado de origem.");
@@ -1061,6 +1065,10 @@ function copiarCodigo(elementId) {
     }
     if (!transferType || (transferType !== 'TOTAL' && transferType !== 'PARCIAL')) {
         alert("Por favor, selecione o tipo de retirada (TOTAL ou PARCIAL).");
+        return;
+    }
+    if (!transferValueField.value) {
+        alert("Por favor, insira o valor da transferência.");
         return;
     }
     if (!destFundField.value) {
