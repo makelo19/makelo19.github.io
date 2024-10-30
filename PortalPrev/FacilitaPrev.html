@@ -2064,6 +2064,7 @@ transferTypeField.addEventListener('change', function() {
 "Fop preenchimento com caneta",
 "Preencheu o fop 021-05 - Plano não conjugado - Nova Faixa",
 "Preencheu o fop 223-06 - Mesma faixa",
+"Preencheu o fop 223-06 - Mesma faixa - Alterar Tributação",
 "Preencheu o fop 223-06 - Mesma faixa zerar taxa de carregamento",
 "Preencheu o fop 223-06 - Unificação mesma faixa zerar taxa de carregamento",
 "Preencheu o fop 224-04 - Alteração Nova faixa",
@@ -2269,6 +2270,7 @@ transferTypeField.addEventListener('change', function() {
 "Fop preenchimento com caneta",
 "Preencheu o fop 021-05 - Plano não conjugado - Nova Faixa",
 "Preencheu o fop 223-06 - Mesma faixa",
+"Preencheu o fop 223-06 - Mesma faixa - Alterar Tributação",
 "Preencheu o fop 223-06 - Mesma faixa zerar taxa de carregamento",
 "Preencheu o fop 223-06 - Unificação mesma faixa zerar taxa de carregamento",
 "Preencheu o fop 224-04 - Alteração Nova faixa",
@@ -2921,6 +2923,15 @@ Lembramos que, ao realizar a transferência de fundos com nova emissão, serão 
                         break;
 case "Preencheu o fop 223-06 - Mesma faixa":
                         resultText += `➢ O certificado de origem XXXXXX está atualmente no fundo CAIXA FIC PREV XXXXXX e foi solicitada a alteração para o fundo CAIXA FIC PREV XXXXX. Verificamos que o fundo desejado pertence ao mesmo grupo do certificado de origem, eliminando a necessidade de emitir um novo certificado. Com base nas informações fornecidas, confirmamos que a transferência desejada pode ser realizada dentro do mesmo certificado, sem a obrigação de emitir um novo plano. Sendo assim, sugerimos o preenchimento do formulário FOP 224-04 (Solicitação de Diversificação entre Fundos de Investimento) para efetuar a alteração/diversificação de fundos dentro do mesmo certificado, sem emissão de um novo plano. Essa opção também está disponível nos serviços online. No entanto, se o(a) participante realmente deseja emitir um novo certificado com novas condições, carência e vigência, conforme o preenchimento do formulário FOP 223-06, solicitamos que seja inserido no campo "Informações complementares" ou na descrição da nova ocorrência que o(a) participante está ciente das novas condições e que deseja gerar um novo certificado.\n\n`;
+                        break;
+case "Preencheu o fop 223-06 - Mesma faixa - Alterar Tributação":
+                        resultText += `➢ Conforme regras dispostas na Instrução Normativa 2.209 da Receita Federal, que regulariza os procedimentos da Lei 14.803 temos que o certificado XXXXXXX está elegível a alteração do regime.
+
+Estamos trabalhando para que em breve seja possível realizar essa alteração do regime tributário por meio dos nossos canais digitais. Até lá, caso deseje a alteração, poderá:
+
+• Ligar para nossa Central de Atendimento pelo número 0800 702 4000 (atendimento de segunda a sexta, das 8h às 21h).
+
+• Ir até uma agência CAIXA, preencher o FOP 191 e solicitar o envio pelo empregado CAIXA.\n\n`;
                         break;
 case "Preencheu o fop 223-06 - Mesma faixa zerar taxa de carregamento":
                         resultText += `➢ Informamos que, infelizmente, não poderemos atender a sua solicitação de transferência de fundo de investimento. De acordo com a orientação da área responsável, o certificado de origem já possui a faixa do fundo desejado CAIXA FIC PREV XXXXXXXXXXX sem necessidade de emitir um novo certificado:
