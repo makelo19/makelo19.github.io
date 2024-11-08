@@ -1082,31 +1082,31 @@ function copiarCodigo(elementId) {
                 if (transferType === 'TOTAL') {
                     text = `Informamos que o novo certificado de número ${destCertificateField.value}, foi emitido conforme o certificado de origem. A transferência total dos recursos do(s) certificado(s) de n°(s) ${originCertificateField.value}, foi realizado com sucesso para o certificado de n° ${destCertificateField.value} com o(s) fundo(s) de nome ${destFundField.value}, na data ${getCurrentDate()}. 
                     
-                            Espero ter ajudado, mas qualquer dúvida que você tiver, poderá entrar em contato novamente.`;
+                            Espero ter ajudado, mas qualquer dúvida que você tiver, poderá entrar em contato novamente.😊`;
                 } else if (transferType === 'PARCIAL') {
                     text = `Informamos que o novo certificado de número ${destCertificateField.value}, foi emitido conforme o certificado de origem. A transferência parcial no valor de R$ ${transferValue} dos recursos do(s) certificado(s) de n°(s) ${originCertificateField.value}, foi realizado com sucesso para o certificado de n° ${destCertificateField.value} com o(s) fundo(s) de nome ${destFundField.value}, na data ${getCurrentDate()}. 
 
-                            Espero ter ajudado, mas qualquer dúvida que você tiver, poderá entrar em contato novamente.`;
+                            Espero ter ajudado, mas qualquer dúvida que você tiver, poderá entrar em contato novamente.😊`;
                 }
             } else if (selectedFOP === 'DIVERSIFICAÇÃO') {
                 if (transferType === 'TOTAL') {
                     text = `Informamos que a transferência total dos recursos do(s) certificado(s) de n°(s) ${originCertificateField.value}, foi realizada com sucesso para o(s) fundo(s) de nome ${destFundField.value}, na data ${getCurrentDate()}. 
                             
-                            Espero ter ajudado, mas qualquer dúvida que você tiver, poderá entrar em contato novamente.`;
+                            Espero ter ajudado, mas qualquer dúvida que você tiver, poderá entrar em contato novamente.😊`;
                 } else if (transferType === 'PARCIAL') {
                     text = `Informamos que a transferência parcial no valor de R$ ${transferValue} dos recursos do(s) certificado(s) de n°(s) ${originCertificateField.value}, foi realizada com sucesso para o(s) fundo(s) de nome ${destFundField.value}, na data ${getCurrentDate()}. 
                            
-                            Espero ter ajudado, mas qualquer dúvida que você tiver, poderá entrar em contato novamente.`;
+                            Espero ter ajudado, mas qualquer dúvida que você tiver, poderá entrar em contato novamente.😊`;
                 }
             } else if (selectedFOP === 'UNIFICAÇÃO') {
                 if (transferType === 'TOTAL') {
                     text = `Informamos que a transferência total dos recursos do(s) certificado(s) de n°(s) ${originCertificateField.value}, foi realizada com sucesso para o certificado de n° ${destCertificateField.value} com o(s) fundo(s) de nome ${destFundField.value}, na data ${getCurrentDate()}. 
 
-                            Espero ter ajudado, mas qualquer dúvida que você tiver, poderá entrar em contato novamente.`;
+                            Espero ter ajudado, mas qualquer dúvida que você tiver, poderá entrar em contato novamente.😊`;
                 } else if (transferType === 'PARCIAL') {
                     text = `Informamos que a transferência parcial no valor de R$ ${transferValue} dos recursos do(s) certificado(s) de n°(s) ${originCertificateField.value}, foi realizada com sucesso para o certificado de n° ${destCertificateField.value} com o(s) fundo(s) de nome ${destFundField.value}, na data ${getCurrentDate()}. 
 
-                            Espero ter ajudado, mas qualquer dúvida que você tiver, poderá entrar em contato novamente.`;
+                            Espero ter ajudado, mas qualquer dúvida que você tiver, poderá entrar em contato novamente.😊`;
                 }
             } else if (selectedFOP === 'PEP-COM') {
                 if (transferType === 'TOTAL' || transferType === 'PARCIAL') {
@@ -1119,7 +1119,7 @@ function copiarCodigo(elementId) {
                               - Assunto: Transferência
                               - Consulta ao Google: Possui envolvimento político
 
-                               Desde já agradeço!`;
+                               Desde já agradeço!😊`;
                 }
             } else if (selectedFOP === 'PEP-SEM') {
                 if (transferType === 'TOTAL' || transferType === 'PARCIAL') {
@@ -1132,7 +1132,7 @@ function copiarCodigo(elementId) {
                               - Assunto: Transferência
                               - Consulta ao Google: Não possui envolvimento político
 
-                               Desde já agradeço!`;
+                               Desde já agradeço!😊`;
                 }
             } else if (selectedFOP === 'TAREFA - SCORE CRÍTICO') {
                 if (transferType === 'TOTAL' || transferType === 'PARCIAL') {
@@ -1146,7 +1146,7 @@ function copiarCodigo(elementId) {
 
                               Obs: A emissão é de recebimento de transferência interna.
 
-                               Desde já agradeço!`;
+                               Desde já agradeço!😊`;
                 }
             } else if (selectedFOP === 'TAREFA - QUEBRA DA CARÊNCIA - PECÚLIO - CONVÊNIO') {
                 if (transferType === 'TOTAL' || transferType === 'PARCIAL') {
@@ -1167,7 +1167,7 @@ function copiarCodigo(elementId) {
                                - Fundo(s) de destino: ${destFundField.value}
                                - Nome: ${clientNameField.value}
 
-                               Desde já agradeço!`;
+                               Desde já agradeço!😊`;
                 }
             } else if (selectedFOP === 'TAREFA - BLOQUEIO POR INCONSTÊNCIA NA BASE DE SALDO') {
                 if (transferType === 'TOTAL' || transferType === 'PARCIAL') {
@@ -1179,7 +1179,7 @@ function copiarCodigo(elementId) {
 
                                 Observação: O certificado não possui resgate em andamento.
 
-                               Agradecemos pelo seu apoio!`;
+                               Agradecemos pelo seu apoio!😊`;
             }
             }
             generatedTextField.innerText = text;
