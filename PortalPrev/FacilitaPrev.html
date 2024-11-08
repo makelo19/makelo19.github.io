@@ -1882,6 +1882,7 @@ transferTypeField.addEventListener('change', function() {
 "Modalidade não Indicada",
 "Modalidade Incorreta",
 "Dados cadastrais atualizado não indicado",
+"Campo educação financeira e/ou material publicitário Indicado SIM e NÂO",
 "Orientação Transferência de Titularidade",
             ],
             "Conjugado": [
@@ -2117,6 +2118,7 @@ transferTypeField.addEventListener('change', function() {
 "Modalidade não Indicada",
 "Modalidade Incorreta",
 "Dados cadastrais atualizado não indicado",
+"Campo educação financeira e/ou material publicitário Indicado SIM e NÂO",
 "Orientação Transferência de Titularidade",
 "Conjugado – Orientações Sobre o plano",
 "Conjugado – Preencheu campo 2.2 – Nova emissão",
@@ -2402,6 +2404,9 @@ case "Modalidade Incorreta":
                         break;
 case "Dados cadastrais atualizado não indicado":
                         resultText += `➢ Na página 1, campo 1, deve ser marcado o item sobre a ciência do(a) participante quanto à obrigatoriedade de manter seus dados cadastrais atualizados, em conformidade com os critérios de boa-fé e veracidade nas declarações e circunstâncias atreladas à contratação do seguro, conforme o art. 765 da Lei 10.406/2022 do Código Civil.\n\n`;
+                        break;
+case "Campo educação financeira e/ou material publicitário Indicado SIM e NÂO":
+                        resultText += `➢ O campo "Autorizo o envio das informações relacionadas à educação financeira e/ou material publicitário, por meio eletrônico, conforme dados cadastrados na proposta" deve ser marcado apenas com uma alternativa: "Sim" ou "Não". Por gentileza, indique apenas uma das opções.\n\n`;
                         break;
 case "Orientação Transferência de Titularidade":
                         resultText += `➢ Informamos que a alteração de CPF não é permitida, pois afeta diretamente no benefício fiscal. Desta forma, visando solucionar essa solicitação, o (a) participante pode solicitar o resgate total do plano e efetuar uma nova contratação com os dados corretos.\n\n`;
