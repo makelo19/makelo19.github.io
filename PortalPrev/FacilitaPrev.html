@@ -2032,6 +2032,7 @@ transferTypeField.addEventListener('change', function() {
 "Sem as duas assinaturas",
 "Sem assinatura do(a) participante",
 "Sem assinatura e carimbo do gerente",
+"Divergência no campo assinatura Representante Legal",
 "Assinatura ilegível",
 "Assinatura eletrônica não validada",
 "Assinatura eletrônica - Documento alterado após assinatura",
@@ -2244,6 +2245,7 @@ transferTypeField.addEventListener('change', function() {
 "Sem as duas assinaturas",
 "Sem assinatura do(a) participante",
 "Sem assinatura e carimbo do gerente",
+"Divergência no campo assinatura Representante Legal",
 "Assinatura ilegível",
 "Assinatura eletrônica não validada",
 "Assinatura eletrônica - Documento alterado após assinatura",
@@ -2810,6 +2812,9 @@ case "Sem assinatura do(a) participante":
                         break;
 case "Sem assinatura e carimbo do gerente":
                         resultText += `➢ No campo "declaração", não consta a assinatura do gerente geral ou do caixa executivo, juntamente com o carimbo. Para garantir a conformidade com os padrões da Caixa Vida e Previdência, é necessário que todas as partes envolvidas assinem e o gerente geral ou caixa executivo carimbem o formulário de transferência.\n\n`;
+                        break;
+case "Divergência no campo assinatura Representante Legal":
+                        resultText += `➢ A assinatura do participante deve ser devidamente inserida somente no campo 'Declaração', no item 'Assinatura do Cliente'. O item 'Assinatura do Representante Legal' deve ser preenchido e assinado somente em casos de curatela ou quando o participante for menor de idade.\n\n`;
                         break;
 case "Assinatura ilegível":
                         resultText += `➢ É imprescindível que o formulário anexado esteja legível, permitindo a visualização clara e a compreensão de todos os dados preenchidos em seus respectivos campos. Solicitamos, por gentileza, que verifique o arquivo enviado, especialmente no que diz respeito à assinatura do(a) participante, e reenvie o formulário garantindo que a assinatura esteja nítida e de boa qualidade.\n\n`;
